@@ -333,36 +333,37 @@
       var hash = "";
 
       //first fetch data from blockchain     
-      
-      
-      await fetch("blockchain.json")
+      await fetch("pbft/blockchain.json")
       .then(function (response) {
           return response.json();
       }
       )
       .then(function (resp) {
-          //for each transaction in the block
-          for (var transactionNum = 0; transactionNum < resp[1]["data"].length; transactionNum ++) {
-              var data = resp[1]["data"][transactionNum]["input"]["data"]["data"];
-              //console.log(data["ID"]);
+        console.log(resp.length);
+          //for each block 
+          for (var blockNum = 1; blockNum < resp.length; blockNum++) {
+            //for each transaction in the block
+            for (var transactionNum = 0; transactionNum < resp[1]["data"].length; transactionNum ++) {
+                var data = resp[blockNum]["data"][transactionNum]["input"]["data"]["data"];
+                //console.log(data["ID"]);
 
-              //if the itemID from URL is id from blockchain
-              if (data["ID"] == ID) {
-                signature = data["employee signature"];
-                empName = data["employee name"];
-                hash = resp[1]["data"][transactionNum]["hash"];
-              
-              }
-          }
+                //if the itemID from URL is id from blockchain
+                if (data["ID"] == ID) {
+                  signature = data["employee signature"];
+                  empName = data["employee name"];
+                  hash = data["Transaction Hash"];
+                
+                }
+            }
+          } 
 
       })
       .catch(error => {
           console.log(error);
       });
 
-      
       //myfunction();
-
+      
       console.log(signature);
       console.log(hash);
       console.log(empName);
@@ -386,8 +387,6 @@
         console.log(isAuthentic);
       })();
       */
-
-
     </script>
 
     <script type="module" src="display-main-card.js"></script>
