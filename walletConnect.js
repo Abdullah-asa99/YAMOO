@@ -1,7 +1,8 @@
 var account;
 var btnContent;
 var ItemID;
-var ownerKey = "0xddD5f93d84eF9E8A91e2dC3C37d8FFd33E1061e9";
+var ownerKey = "";
+var transactionData;
 
 //get Item ID from URL
 const currentURL = new URL(location.href);
@@ -9,41 +10,64 @@ const currentURL = new URL(location.href);
 var ItemID = currentURL.searchParams.get("itemID");
 
 //my function to get from blockchain
-async function myFunction() {
-  await fetch("pbft\blockchain.json")
-  .then(function (response) {
+/* async function myFunction() {
+  await fetch("../pbft/blockchain.json")
+    .then(function (response) {
       return response.json();
-  }
-  )
-  .then(function (resp) {
+    })
+    .then(function (resp) {
       //for each transaction in the block
-      for (var transactionNum = 0; transactionNum < resp[1]["data"].length; transactionNum ++) {
-          var data = resp[1]["data"][transactionNum]["input"]["data"]["data"];
-          //console.log(data["ID"]);
+      for (
+        var transactionNum = 0;
+        transactionNum < resp[1]["data"].length;
+        transactionNum++
+      ) {
+        var data = resp[1]["data"][transactionNum]["input"]["data"]["data"];
+        //console.log(data["ID"]);
 
-          //if the itemID from URL is id from blockchain
-          if (data["ID"] == ItemID) {
-            ownerKey = data["owner"];
-          }
+        //if the itemID from URL is id from blockchain
+        if (data["ID"] == ItemID) {
+          ownerKey = data["owner"];
+        }
       }
-
-  })
-  .catch(error => {
+    })
+    .catch((error) => {
       console.log(error);
-  });
-}
+    });
+} */
 
-//call myFunction here
-function start()  {
-  return myFunction();
-}
+var fetchBlockchain = async () => {
+  await fetch("../pbft/blockchain.json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (resp) {
+      //for each transaction in the block
+      for (
+        var transactionNum = 0;
+        transactionNum < resp[1]["data"].length;
+        transactionNum++
+      ) {
+        var data = resp[1]["data"][transactionNum]["input"]["data"]["data"];
+        //console.log(data["ID"]);
 
-
-//asynchronous call (function wraps rest of code in file until bottom)
-(async() => {
-  await start();
+        //if the itemID from URL is id from blockchain
+        if (data["ID"] == ItemID) {
+          ownerKey = data["owner"];
+          return ownerKey;
+        }
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  console.log("inside fetch");
   console.log(ownerKey);
-  //console.log('after start');
+  console.log(ItemID);
+};
+
+//
+/* import { postR } from './pbft/sandbox.'; */
 
 
 
@@ -58,6 +82,7 @@ var provider = new WalletConnectProvider.default({
 });
 
 var connectWC = async () => {
+  await fetchBlockchain();
   await provider.enable();
 
   //  Create Web3 instance
@@ -88,7 +113,7 @@ var SendTransaction = async () => {
   window.w3 = web3;
 
   var weiValue = web3.utils.toWei("0.00001", "ether"); // 1 ether
-  console.log(weiValue); //1000000000000000000
+  /* console.log(weiValue); //1000000000000000000 */
   var wuigas = web3.utils.toWei("2", "gwei");
 
   const transactionParameters = {
@@ -110,18 +135,17 @@ var SendTransaction = async () => {
     params: [transactionParameters],
   });
   var re = /[0-9A-Fa-f]{6}/g;
-  if(re.test(txHash)) {//check if output is hex
-    console.log('valid');
-} else {
-    console.log('invalid');
-}
+  if (re.test(txHash)) {
+    //check if output is hex
+    var axios = require("axios");
+    
+    console.log("valid");
+  } else {
+    console.log("invalid");
+  }
 
   console.log(txHash);
-
 };
-
-
-
 
 var sign = async (msg) => {
   if (w3) {
@@ -169,6 +193,4 @@ var abi = [
   },
 ];
 
-
-
-})(); //end of async call
+//end of async call
