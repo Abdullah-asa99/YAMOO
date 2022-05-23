@@ -3,6 +3,52 @@ var btnContent;
 var ItemID;
 var ownerKey = "0xddD5f93d84eF9E8A91e2dC3C37d8FFd33E1061e9";
 
+//get Item ID from URL
+const currentURL = new URL(location.href);
+//console.log(currentURL);
+var ItemID = currentURL.searchParams.get("itemID");
+
+//my function to get from blockchain
+async function myFunction() {
+  await fetch("blockchain.json")
+  .then(function (response) {
+      return response.json();
+  }
+  )
+  .then(function (resp) {
+      //for each transaction in the block
+      for (var transactionNum = 0; transactionNum < resp[1]["data"].length; transactionNum ++) {
+          var data = resp[1]["data"][transactionNum]["input"]["data"]["data"];
+          //console.log(data["ID"]);
+
+          //if the itemID from URL is id from blockchain
+          if (data["ID"] == ID) {
+            ownerKey = data["owner"];
+          }
+      }
+
+  })
+  .catch(error => {
+      console.log(error);
+  });
+}
+
+//call myFunction here
+function start()  {
+  return myFunction();
+}
+
+
+//asynchronous call 
+(async() => {
+  await start();
+  console.log(ownerKey);
+  console.log('after start');
+})();
+
+console.log(ownerKey);
+
+
 // https://docs.walletconnect.com/quick-start/dapps/web3-provider
 var provider = new WalletConnectProvider.default({
   rpc: {

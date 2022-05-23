@@ -9,7 +9,7 @@ var itemID = currentURL.searchParams.get("itemID");
 var ID = itemID; 
 
 //first fetch data from blockchain 
-await fetch("blockchain.json")
+await fetch("pbft/blockchain.json")
 .then(function (response) {
     return response.json();
 }

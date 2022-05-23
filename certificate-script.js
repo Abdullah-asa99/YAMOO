@@ -37,7 +37,7 @@ image.onload = function () {
 
 
 function getDataFromBlockChain() {
-    fetch("blockchain.json")
+    fetch("pbft/blockchain.json")
     .then(function (response) {
       return response.json();
     }
