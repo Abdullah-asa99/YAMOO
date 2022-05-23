@@ -10,7 +10,7 @@ var ItemID = currentURL.searchParams.get("itemID");
 
 //my function to get from blockchain
 async function myFunction() {
-  await fetch("blockchain.json")
+  await fetch("pbft\blockchain.json")
   .then(function (response) {
       return response.json();
   }

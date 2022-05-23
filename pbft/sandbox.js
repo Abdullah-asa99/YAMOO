@@ -1,15 +1,15 @@
 const inputReader = require("wait-console-input");
 
-/* let selection = inputReader.readInteger(
+let selection = inputReader.readInteger(
   "Please select a function:\n1- GET transactions.\n2- GET blocks.\n3- POST transaction.\n",
   {
     reInputOnError: true,
     separator: "enter",
     size: 1,
   }
-); */
+);
 //build field by field
-selection = 1234134;
+
 
 var transactionData;
 if (selection == 3) {
@@ -131,7 +131,7 @@ function signTransaction(obj) {
   var signature = generateSignature(hash);
 
   obj = { ...obj, "employee signature": signature.toString() };
-
+  obj = { ...obj, "Transaction Hash": hash.toString() };
   console.log(obj);
 
   //function to generate a signature for a hash value using PRIVATE key
@@ -180,14 +180,4 @@ function verifySignature(signature, empName, hash) {
 
   return isVerified;
 }
-var signature = "";
-var empName = "";
-var hash = "";
 
-function testtt() {
-  const crypto = require("crypto");
-  const fs = require("fs");
-  const buffer = require("buffer");
-  console.log("inside -");
-}
-var test = testtt();
