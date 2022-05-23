@@ -285,18 +285,27 @@
         }
       }
     </script>
-    <script>
+
+
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>-->
+
+
+
+    <!--Script to verify signature-->
+    <script type = "module">
       const currentURL = new URL(location.href);
       //console.log(currentURL);
-      var itemID = currentURL.searchParams.get("itemID");
-      console.log("item id in new script: " + itemID);
+      var ID = currentURL.searchParams.get("itemID");
+      console.log("item id in new script: " + ID);
+
+      
       function verifySignature(signature, empName, hash) {
         const crypto = require("crypto");
         const fs = require("fs");
         const buffer = require("buffer");
 
         //generate a path for public key
-        const publicKeyPath = empName + "-publickey.txt";
+        const publicKeyPath = "pbft/" + empName + "-publickey.txt";
         //read public key from file path
         const publicKey = fs.readFileSync(publicKeyPath);
         //convert signature string to buffer
@@ -313,8 +322,74 @@
         );
 
         return isVerified; //if not verified fix the UI
+      } //end of verify signature function
+
+
+      //---GET parameters for verifysignature from blockchain---------------------------
+
+      //fetch signature, employee name and hash from blockchain  using itemIF
+      var signature = "";
+      var empName = ""; 
+      var hash = "";
+
+      //first fetch data from blockchain     
+      
+      
+      await fetch("blockchain.json")
+      .then(function (response) {
+          return response.json();
       }
+      )
+      .then(function (resp) {
+          //for each transaction in the block
+          for (var transactionNum = 0; transactionNum < resp[1]["data"].length; transactionNum ++) {
+              var data = resp[1]["data"][transactionNum]["input"]["data"]["data"];
+              //console.log(data["ID"]);
+
+              //if the itemID from URL is id from blockchain
+              if (data["ID"] == ID) {
+                signature = data["employee signature"];
+                empName = data["employee name"];
+                hash = resp[1]["data"][transactionNum]["hash"];
+              
+              }
+          }
+
+      })
+      .catch(error => {
+          console.log(error);
+      });
+
+      
+      //myfunction();
+
+      console.log(signature);
+      console.log(hash);
+      console.log(empName);
+      var isAuthentic = verifySignature(signature, empName, hash);
+      console.log(isAuthentic);
+
+      /*
+      function start() {
+        return myfunction();
+      }
+
+      // Call start
+      (async() => {
+        //console.log('before start');
+        await start();
+        
+        console.log(signature);
+        console.log(hash);
+        console.log(empName);
+        var isAuthentic = verifySignature(signature, empName, hash);
+        console.log(isAuthentic);
+      })();
+      */
+
+
     </script>
+
     <script type="module" src="display-main-card.js"></script>
     <script type="text/javascript" src="walletConnect.js"></script>
     <script src="assets/bootstrap.bundle.min.js"></script>
