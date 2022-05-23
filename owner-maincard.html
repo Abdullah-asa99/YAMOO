@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/owner-maincard.css" />
+
+  <link rel="stylesheet" href="css/menu.css" />
+</head>
+
+<body>
+  <div class="buttons-container">
+    <div class="button-div">
+      <a onclick="window.location='locationNew.html'+window.location.search;" class="Buy-button">Location</a>
+    </div>
+    <div class="button-div">
+      <a onclick="window.location='certificate.html'+window.location.search;" class="Buy-button">Certification</a>
+    </div>
+  </div>
+  <div class="menu-wrap">
+    <!-- fix icon alignment  -->
+    <input type="checkbox" class="toggler" />
+    <div class="hamburger">
+      <div></div>
+    </div>
+    <!-- fix the elements inside the menu -->
+    <div class="menu">
+      <div>
+        <ul class="list-items">
+          <li>
+            <ul>
+              <img src="./assets/images/home-svg.svg" alt="home-icon" />
+              <a href="#">Home</a>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <img src="./assets/images/person.svg" alt="home-icon" />
+              <a href="#">Log in</a>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <img src="./assets/images/phone-svgrepo-com.svg" alt="home-icon" />
+              <a href="#">Contact us</a>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <img src="./assets/images/about-information-info-help-svgrepo-com.svg" alt="home-icon" />
+              <a href="#">About</a>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="my-row">
+    <div class="example-1 my-card">
+      <div class="wrapper">
+        <div class="art-pic" ><img src="" alt="" id = "art-pic"></div>
+        <div class="the-cards">
+          <div ontouchstart="touchStart(event)" ontouchmove="touchMove(event)" ontouchend="touchEnd()" id="backSheet"
+            class="data">
+            <div class="content">
+              <div class="blueeee">
+                <h1 class="product-name" id = "prodname">product name</h1>
+                <ul>
+                  <li>
+                    <img src = "..." id = "artist-picture" class="img-thumbnail rounded-circle" alt=" artist pic" />
+                  </li>
+                  <li>
+                    <h4><a onclick="window.location='profile.html'+window.location.search;" class="artist-name" id = "art-name">artist name</a></h4>
+                  </li>
+                </ul>
+              </div>
+              <div class="whiteee">
+                <div class="swipe-indicator"></div>
+                <ul>
+                  <li>
+                    <h2 class="authenticity" id = "authentic">The item is authentic</h2>
+                  </li>
+                  <li style="
+                        padding: 0;
+                        margin: 0;
+                        position: relative;
+                        top: 8px;
+                      ">
+                    <img class="imgg" style="width: 2rem" src="./assets/images/checkbox-circle-fill.svg"
+                      alt="checkmark" />
+                  </li>
+                </ul>
+                <ul class="nav nav-pills nav-pilled-tab" id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-Info-tab" data-bs-toggle="pill"
+                      data-bs-target="#pills-Info" type="button" role="tab" aria-controls="pills-Info"
+                      aria-selected="true">
+                      Description
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-Owner-tab" data-bs-toggle="pill" data-bs-target="#pills-Owner"
+                      type="button" role="tab" aria-controls="pills-Owner" aria-selected="false">
+                      History of owners
+                    </button>
+                  </li>
+                </ul>
+                <div class="tab-content content-custome-data" id="pills-tabContent">
+                  <div class="tab-pane fade active show" id="pills-Info" role="tabpanel"
+                    aria-labelledby="pills-Info-tab">
+                    <div>
+                      <!-- <h5>Name:</h5>
+                      <p>For he's a jolly good fellow 2020</p> -->
+                      <h5>Price:</h5>
+                      <p id = "itemPrice">100000$</p>
+                      <h5>Size:</h5>
+                      <p id = "size"></p>
+                      <h5>Media:</h5>
+                      <p id = "artMedia">oil and gold leaf on canvas</p>
+                      <h5>Ideas behind the work:</h5>
+                      <p id = "idea"></p>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-Owner" role="tabpanel" aria-labelledby="pills-Owner-tab">
+                    <h5>History</h5>
+                  </div>
+                </div>
+                <div>
+                  <!-- <h5>Name:</h5>
+                  <p>For he's a jolly good fellow 2020</p> -->
+                </div>
+
+                <!--    <p style="overflow-y: scroll; height: 10vh;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cum deleniti unde accusantium corrupti, quia voluptas laudantium dolorum, dolor harum quasi sapiente voluptatem impedit labore error? Distinctio magni dignissimos unde veritatis in exercitationem error sint nostrum fuga consequuntur aperiam porro dicta, excepturi amet adipisci nam enim deleniti eaque possimus? Nulla ad adipisci obcaecati autem eaque similique optio aliquam tempore veritatis, ut ipsum ab repudiandae. Tenetur quod esse dolorum eligendi. Minus ad esse rerum repellendus corporis nam omnis, aliquid velit dolorum eveniet, facere magnam. Recusandae eaque quisquam eveniet cum magni veritatis sed ducimus ut, ad, officiis aliquam illo, molestiae similique impedit accusantium nisi optio. Alias mollitia tempore quis, quibusdam obcaecati vel eligendi voluptatibus sapiente, atque qui cum, iste quidem maiores unde neque cumque! Rerum quidem quis distinctio natus ab sed laborum dignissimos quae error consequuntur? Impedit reiciendis neque at numquam nihil totam pariatur eligendi, laborum, soluta non doloremque nulla dolores perferendis exercitationem, repellendus eveniet! Eius cumque eveniet vero nesciunt debitis assumenda id enim, animi ipsam officiis, facere magni ipsa? Dignissimos vitae fugiat dolor voluptatem dolorem sint vero laudantium quaerat pariatur saepe vel, maiores, sunt exercitationem eius nulla illum reprehenderit! Cupiditate voluptatibus fuga sequi, ad aperiam nemo ex eos facilis reiciendis nulla, provident rem labore consectetur dolores iusto. Alias cum molestiae iusto dolore adipisci, provident fugiat expedita molestias eligendi optio culpa nisi reprehenderit ea maxime ullam similique, rerum a nemo earum accusamus deserunt recusandae corporis laborum impedit! Praesentium, quas reprehenderit. Nemo, quos! Beatae totam molestias voluptate soluta dolores, officia aut recusandae ducimus similique maxime vitae, animi modi voluptas eaque iste quibusdam et deleniti! Nesciunt accusantium sit voluptatem deserunt quidem soluta. Inventore suscipit eum doloremque ad delectus laborum at, eius minus saepe cupiditate esse mollitia earum fugiat, atque, velit aliquid ullam quia vero rem laboriosam aspernatur! Expedita harum, suscipit non reprehenderit eos, maiores ducimus repellendus similique tenetur impedit placeat quisquam quia, laboriosam atque tempore porro sunt velit? Optio possimus harum enim vero ex sit architecto repellendus dignissimos nisi libero quaerat culpa voluptas omnis illo, quasi ea deserunt veniam exercitationem magnam! Aliquid delectus exercitationem repellendus nam, odio et dolor consequatur dolore placeat nostrum magnam, numquam dicta aperiam ad qui rem ratione impedit quo saepe quod modi distinctio corporis? Commodi, aut minus vero dicta similique excepturi molestias dignissimos in quasi itaque dolor optio quaerat pariatur sunt, eaque velit assumenda consequatur neque. Commodi neque magnam vel impedit earum nisi molestias quidem error omnis atque veniam sed provident deserunt facere adipisci eos repellat illo nihil eveniet nostrum voluptatibus dolorum, incidunt sint? Libero inventore cum ipsam voluptas laboriosam provident explicabo rerum in eligendi quisquam mollitia maxime voluptatem autem, rem asperiores atque consequatur sequi? Beatae illum harum pariatur eos commodi sequi perspiciatis modi obcaecati quam error unde incidunt quae cupiditate doloribus molestiae, quaerat at aliquid voluptatem dolore id deleniti iusto aspernatur! Numquam, explicabo. Hic, consectetur fugit non modi a, asperiores fuga illo cumque ex quasi perferendis necessitatibus. Facere animi qui veniam vel magni consequatur doloribus recusandae impedit quis dignissimos porro, suscipit ea deleniti consequuntur autem. Dolore officiis numquam veniam.</p>
+               -->
+                <!-- add size section -->
+
+                <p class="space-holder">holder</p>
+              </div>
+            </div>
+          </div>
+          <!-- <div id="frontSheet" class="data">
+              <div class="content">
+                <div class="front-sheet-head">
+                  <h2 class="authenticity">The item is authentic</h2>
+                  <img src="#" alt="checkmark" />
+                  <p>
+                    Boxing icon has the will for a couple more fightsBoxing icon
+                    has the will for a couple more fightsBoxing icon has the
+                    will for a couple more fightsBoxing icon has the will for a
+                    couple more fightsBoxing icon has the will for a couple more
+                    fightsBoxing icon has the will for a couple more
+                    fightsBoxing icon has the will for a couple more
+                    fightsBoxing icon has the will for a couple more
+                    fightsBoxing icon has the will for a couple more fights
+                  </p>
+                </div>
+
+                <h1 class="title">
+                  <a href="#"
+                    >Boxing icon has the will for a couple more fights
+                  </a>
+                </h1>
+                <p class="text"></p>
+              </div>
+            </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- card move code -->
+  <script>
+    var expanded = false;
+
+    let card = document.getElementById("backSheet");
+    card.style.height = "350px";
+    card.style.transition = "height 300ms";
+    var startingX, startingY, movingX, movingY;
+    function touchStart(evt) {
+      startingX = evt.touches[0].clientX;
+      startingY = evt.touches[0].clientY;
+    }
+    function touchMove(evt) {
+      movingX = evt.touches[0].clientX;
+      movingY = evt.touches[0].clientY;
+    }
+    function touchEnd() {
+      if (startingX + 100 < movingX) {
+      } else if (startingX - 100 > movingX) {
+      }
+
+      if (startingY + 100 < movingY && expanded) {
+        //console.log("down");
+        expanded = false;
+        card.style.height = "350px";
+      } else if (startingY - 100 > movingY && !expanded) {
+        //console.log("up");
+        card.style.height = "640px";
+        expanded = true;
+      }
+    }
+  </script>
+
+
+  <script type="module" src="display-main-card.js"></script>
+  <script src="assets/bootstrap.bundle.min.js"></script>
+
+  <script type="module" src = "URLgenerator.js"></script>
+
+
+</body>
+</html>

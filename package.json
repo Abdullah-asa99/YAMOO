@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@walletconnect/node": "^1.0.0",
+    "@walletconnect/qrcode-modal": "^1.7.8",
+    "@walletconnect/web3-provider": "^1.7.8",
+    "web3": "^1.7.3",
+    "web3modal": "^1.9.7"
+  }
+}

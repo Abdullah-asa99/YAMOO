@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location for item page</title>
+    <style>
+         #map {
+            width: 100vw;
+            height: 80vh;
+    
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <!--<h1>Location for item</h1>-->
+
+    <div id="map">
+    </div>  
+
+    <p hidden id = "latitude">Latitude: </p>
+    <p hidden id = "longitude">Longtitude: </p>
+
+    <script src = "fetchLocationFromFirebase.js" type="module"></script>
+
+
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqGLq3pfdRUneTGpqA7FZk6v75g-RE1zw&callback=initMap">
+    </script>
+    <script src = "display-google-map.js"></script>
+
+    
+
+</body>
+</html>

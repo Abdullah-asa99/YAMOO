@@ -1,0 +1,140 @@
+@charset "UTF-8";
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,800;1,300&display=swap");
+
+:root {
+  --primary-color_dark: #041e3d;
+  --menu-speed: 1s;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+body {
+  background: var(--primary-color_dark);
+  margin: 0em;
+  font-family: "Poppins";
+}
+
+/* .navbar {
+  padding-top: 1em;
+}
+.navbar .mobile-menu {
+  cursor: pointer;
+}
+nav {
+  display: none;
+} */
+.main-home {
+  margin: 0;
+  padding: 0;
+}
+.main-home .container {
+  padding: 2em;
+  color: white;
+  text-align: center;
+}
+.main-home .container .logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300;
+  margin-bottom: 2em;
+}
+.main-home .container .big-text {
+  padding-top: 0em;
+  font-weight: bold;
+  font-size: 1.5cm;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+}
+.main-home .container .small-text {
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 2em;
+  margin-top: auto;
+  margin-bottom: 1em;
+}
+.main-home .container .button-div {
+  width: 350px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  padding: 7px;
+  margin-top: 5em;
+}
+.main-home .container .button-div .signup-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  height: 50px;
+  margin-right: 7px;
+  border: none;
+  border-radius: 0.8em;
+  background-color: #22dea9;
+  color: var(--primary-color_dark);
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.main-home .container .button-div .login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 0.8em;
+  font-size: 1.2em;
+  color: var(--primary-color_dark);
+  background-color: #22dea9;
+  cursor: pointer;
+}
+/* 
+nav.menu-btn {
+  display: block;
+}
+
+nav {
+  position: fixed;
+  z-index: 999;
+  width: 66%;
+  left: 0;
+  top: 0;
+  background: #1f4169;
+  height: 100vh;
+  padding: 1em;
+}
+ul.primary-nav {
+  margin-top: 5em;
+}
+#Home {
+  margin-top: 5em;
+}
+nav li {
+  list-style-type: none;
+}
+#menu-logo{
+  margin-left: -1em;
+}
+nav li a {
+  margin-top: 2.5em;
+  color: white;
+  font-weight: 200;
+  text-decoration: none;
+  display: block;
+  padding: 0.5em;
+  font-size: 1.3em;
+} */

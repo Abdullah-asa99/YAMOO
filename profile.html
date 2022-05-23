@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+  </head>
+  <body>
+    <div class="menu-wrap">
+      <!-- fix icon alignment  -->
+      <input type="checkbox" class="toggler" />
+      <div class="hamburger"><div></div></div>
+      <div class="menu">
+        <div>
+          <ul class="list-items">
+            <li>
+              <ul>
+                <img src="./assets/images/home-svg.svg" alt="home-icon" />
+                <a href="#">Home</a>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <img src="./assets/images/person.svg" alt="home-icon" />
+                <a href="#">Log in</a>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <img
+                  src="./assets/images/phone-svgrepo-com.svg"
+                  alt="home-icon"
+                />
+                <a href="#">Contact us</a>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <img
+                  src="./assets/images/about-information-info-help-svgrepo-com.svg"
+                  alt="home-icon"
+                />
+                <a href="#">About</a>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="my-row">
+      <div class="example-1 my-card">
+        <div class="wrapper">
+          <div class="art-pic"><img src="" alt="" id="art-pic" /></div>
+          <div class="the-cards">
+            <div id="backSheet" class="data">
+              <div class="content">
+                <div class="blueeee">
+                  <h1 class="name" id="artistName">Margaret Handolias</h1>
+                  <ul>
+                    <li>
+                      <span class="type" style="font-weight: 100">Artist</span>
+                    </li>
+                  </ul>
+                  <h5>More items :</h5>
+
+                  <div id="itemCard1" class="item-card">
+                    <section class="items-container" id="itemCard"></section>
+                  </div>
+
+                  <h5>About</h5>
+                  <p id="artistAbout">
+                    Student at University of Melbourne Prahran, Victoria,
+                    Australia
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- <div id="frontSheet" class="data">
+              <div class="content">
+                <div class="front-sheet-head">
+                  <h2 class="authenticity">The item is authentic</h2>
+                  <img src="#" alt="checkmark" />
+                  <p>
+                    Boxing icon has the will for a couple more fightsBoxing icon
+                    has the will for a couple more fightsBoxing icon has the
+                    will for a couple more fightsBoxing icon has the will for a
+                    couple more fightsBoxing icon has the will for a couple more
+                    fightsBoxing icon has the will for a couple more
+                    fightsBoxing icon has the will for a couple more
+                    fightsBoxing icon has the will for a couple more
+                    fightsBoxing icon has the will for a couple more fights
+                  </p>
+                </div>
+
+                <h1 class="title">
+                  <a href="#"
+                    >Boxing icon has the will for a couple more fights
+                  </a>
+                </h1>
+                <p class="text"></p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var expanded = false;
+      /* (function () {
+        var expanded = false;
+        $("#backSheet").click(function () {
+          if (!expanded) {
+            $(this).animate({ left: "0px" }, { duration: 400 });
+            expanded = true;
+          } else {
+            $(this).animate({ left: "565px" }, { duration: 400 });
+            expanded = false;
+          }
+        });
+      }); */
+
+      /* 
+      let card = document.getElementById("backSheet");
+      card.style.transform = "translateY(30%)";
+      card.onclick = function () {
+        expand();
+      };
+
+      function expand() {
+        
+        if (!expanded) {
+          card.style.transform = "translateY(0em)";
+          expanded = true;
+        } else {
+          card.style.transform = "translateY(30%)";
+          expanded = false;
+        }
+      } */
+      /*   
+      let card = document.getElementById("backSheet");
+      card.style.height = "470px";
+      card.style.transition = "height 300ms";
+      var startingX, startingY, movingX, movingY;
+      function touchStart(evt) {
+        startingX = evt.touches[0].clientX;
+        startingY = evt.touches[0].clientY;
+      }
+      function touchMove(evt) {
+        movingX = evt.touches[0].clientX;
+        movingY = evt.touches[0].clientY;
+      }
+      function touchEnd() {
+        if (startingX + 100 < movingX) {
+        } else if (startingX - 100 > movingX) {
+        }
+
+        if (startingY + 100 < movingY && expanded) {
+          //close
+          // console.log("down"); 
+          expanded = false;
+          card.style.height = "470px";
+        } else if (startingY - 100 > movingY && !expanded) {
+          //open
+          //onsole.log("up"); 
+          card.style.height = "690px";
+          expanded = true;
+        }
+      }  */
+    </script>
+
+    <!--Script made by Abdul-Muizz to load data (inlcuding images for more items) from firebase to profile.html page-->
+    <script type="module" src="display-profile-card.js"></script>
+  </body>
+</html>
