@@ -60,10 +60,12 @@ var SendTransaction = async () => {
 
   // txHash is a hex string
   // As with any RPC call, it may throw an error
+
   const txHash = await ethereum.request({
     method: "eth_sendTransaction",
     params: [transactionParameters],
   });
+  var re = /[0-9A-Fa-f]{6}/g;
   if(re.test(txHash)) {//check if output is hex
     console.log('valid');
 } else {
@@ -71,7 +73,11 @@ var SendTransaction = async () => {
 }
 
   console.log(txHash);
+
 };
+
+
+
 
 var sign = async (msg) => {
   if (w3) {

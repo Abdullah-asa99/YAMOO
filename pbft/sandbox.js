@@ -1,14 +1,16 @@
 const inputReader = require("wait-console-input");
 
-let selection = inputReader.readInteger(
+/* let selection = inputReader.readInteger(
   "Please select a function:\n1- GET transactions.\n2- GET blocks.\n3- POST transaction.\n",
   {
     reInputOnError: true,
     separator: "enter",
     size: 1,
   }
-);
+); */
 //build field by field
+selection = 1234134;
+
 var transactionData;
 if (selection == 3) {
   transactionData = inputReader.readLine("Please enter the transaction:\n");
@@ -26,10 +28,10 @@ const postR = (transactionData) => {
 
   var data = signTransaction(JSON.parse(transactionData));
   var transaction = {
-    "data": {
-      data
-    }
-  }
+    data: {
+      data,
+    },
+  };
   console.log(JSON.stringify(transaction));
 
   var config = {
@@ -129,7 +131,7 @@ function signTransaction(obj) {
   var signature = generateSignature(hash);
 
   obj = { ...obj, "employee signature": signature.toString() };
-  
+
   console.log(obj);
 
   //function to generate a signature for a hash value using PRIVATE key
@@ -139,29 +141,27 @@ function signTransaction(obj) {
     const buffer = require("buffer");
 
     //read private key from file path
-    var privateKeyPath = inputReader.readLine("\nEnter file path for private key of employee: ");
+    var privateKeyPath = inputReader.readLine(
+      "\nEnter file path for private key of employee: "
+    );
     var privateKey = fs.readFileSync(privateKeyPath); //store data from private key text file
     //console.log(privateKey);
 
-
-    const h = Buffer.from(hash);  //Convert hash string to buffer 
+    const h = Buffer.from(hash); //Convert hash string to buffer
     const sign = crypto.sign("SHA256", h, privateKey); //Sign the data and returned signature in buffer
     //console.log(sign);
 
     //Convert returned buffer to base16
     const signature = sign.toString("hex");
     return signature;
-
   }
 
   return obj;
 }
 
-
-
 //verify signature string using PUBLIC key of employee
 //empName comes from blockchain
-export function verifySignature(signature, empName, hash) {
+function verifySignature(signature, empName, hash) {
   const crypto = require("crypto");
   const fs = require("fs");
   const buffer = require("buffer");
@@ -179,5 +179,15 @@ export function verifySignature(signature, empName, hash) {
   const isVerified = crypto.verify("SHA256", h, publicKey, signatureBuffer);
 
   return isVerified;
-
 }
+var signature = "";
+var empName = "";
+var hash = "";
+
+function testtt() {
+  const crypto = require("crypto");
+  const fs = require("fs");
+  const buffer = require("buffer");
+  console.log("inside -");
+}
+var test = testtt();
