@@ -10,7 +10,6 @@ let selection = inputReader.readInteger(
 );
 //build field by field
 
-
 var transactionData;
 if (selection == 3) {
   transactionData = inputReader.readLine("Please enter the transaction:\n");
@@ -24,6 +23,7 @@ if (selection == 3) {
 }; */
 
 const postR = (transactionData) => {
+  console.log("post inside");
   var axios = require("axios");
 
   var data = signTransaction(JSON.parse(transactionData));
@@ -180,4 +180,3 @@ function verifySignature(signature, empName, hash) {
 
   return isVerified;
 }
-
