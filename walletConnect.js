@@ -22,7 +22,7 @@ async function myFunction() {
           //console.log(data["ID"]);
 
           //if the itemID from URL is id from blockchain
-          if (data["ID"] == ID) {
+          if (data["ID"] == ItemID) {
             ownerKey = data["owner"];
           }
       }
@@ -39,14 +39,12 @@ function start()  {
 }
 
 
-//asynchronous call 
+//asynchronous call (function wraps rest of code in file until bottom)
 (async() => {
   await start();
   console.log(ownerKey);
   console.log('after start');
-})();
 
-console.log(ownerKey);
 
 
 // https://docs.walletconnect.com/quick-start/dapps/web3-provider
@@ -164,3 +162,7 @@ var abi = [
     type: "function",
   },
 ];
+
+
+
+})(); //end of async call
