@@ -43,7 +43,7 @@ function start()  {
 (async() => {
   await start();
   console.log(ownerKey);
-  console.log('after start');
+  //console.log('after start');
 
 
 
