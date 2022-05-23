@@ -1,3 +1,4 @@
+
 var account;
 var btnContent;
 var ItemID;
@@ -36,25 +37,29 @@ var ItemID = currentURL.searchParams.get("itemID");
     });
 } */
 
+
 var fetchBlockchain = async () => {
   await fetch("../pbft/blockchain.json")
     .then(function (response) {
       return response.json();
     })
     .then(function (resp) {
-      //for each transaction in the block
-      for (
-        var transactionNum = 0;
-        transactionNum < resp[1]["data"].length;
-        transactionNum++
-      ) {
-        var data = resp[1]["data"][transactionNum]["input"]["data"]["data"];
-        //console.log(data["ID"]);
+      for (var blockNum = 1; blockNum < resp.length; blockNum++) {
+        //for each transaction in the block
+        for (
+          var transactionNum = 0;
+          transactionNum < resp[blockNum]["data"].length;
+          transactionNum++
+        ) {
+          var data = resp[blockNum]["data"][transactionNum]["input"]["data"]["data"];
+          //console.log(data["ID"]);
 
-        //if the itemID from URL is id from blockchain
-        if (data["ID"] == ItemID) {
-          ownerKey = data["owner"];
-          return ownerKey;
+          //if the itemID from URL is id from blockchain
+          if (data["ID"] == ItemID) {
+            ownerKey = data["owner"];
+            transactionData = data;
+            return ownerKey;
+          }
         }
       }
     })
@@ -69,8 +74,6 @@ var fetchBlockchain = async () => {
 //
 /* import { postR } from './pbft/sandbox.'; */
 
-
-
 // https://docs.walletconnect.com/quick-start/dapps/web3-provider
 var provider = new WalletConnectProvider.default({
   rpc: {
@@ -82,6 +85,7 @@ var provider = new WalletConnectProvider.default({
 });
 
 var connectWC = async () => {
+  
   await fetchBlockchain();
   await provider.enable();
 
@@ -107,6 +111,7 @@ var connectWC = async () => {
 //I have the account
 
 var SendTransaction = async () => {
+  /* let postR = await import('./pbft/sandbox.js'); */
   console.log("buy clicked");
   console.log(String(account));
   const web3 = new Web3(provider);
@@ -137,8 +142,8 @@ var SendTransaction = async () => {
   var re = /[0-9A-Fa-f]{6}/g;
   if (re.test(txHash)) {
     //check if output is hex
-    var axios = require("axios");
-    
+   /*  postR(transactionData); */
+
     console.log("valid");
   } else {
     console.log("invalid");

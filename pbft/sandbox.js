@@ -22,7 +22,7 @@ if (selection == 3) {
   },
 }; */
 
-const postR = (transactionData) => {
+ const postR = (transactionData) => {
   console.log("post inside");
   var axios = require("axios");
 
@@ -51,8 +51,10 @@ const postR = (transactionData) => {
       console.log(error);
     });
 };
+
+
 ///////////////////
-const getTransactions = (transactionData) => {
+  const getTransactions = (transactionData) => {
   var axios = require("axios");
   var data = transactionData;
 
@@ -75,7 +77,7 @@ const getTransactions = (transactionData) => {
 };
 
 ////////////////
-const getBlcoks = (transactionData) => {
+ const getBlcoks = (transactionData) => {
   var axios = require("axios");
   var data = transactionData;
 
