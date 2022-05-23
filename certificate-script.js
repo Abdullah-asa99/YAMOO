@@ -43,33 +43,35 @@ function getDataFromBlockChain() {
     }
     )
     .then(function (resp) {
-      //for each transaction in the block
-      for (var transactionNum = 0; transactionNum < resp[1]["data"].length; transactionNum ++) {
-        var data = resp[1]["data"][transactionNum]["input"]["data"]["data"];
+      //for each block
+      for (var blockNum = 1; blockNum < resp.length; blockNum++) {
+        //for each transaction in the block
+        for (var transactionNum = 0; transactionNum < resp[1]["data"].length; transactionNum ++) {
+          var data = resp[blockNum]["data"][transactionNum]["input"]["data"]["data"];
 
-        //check if ID sent is equal to the block's id
-        if (ID == data["ID"]) {
-          //get data needed from blockchain
-          productName = data["product name"];
-          artistName = data["artist name"];
-          size = data["size"];
-          media = data["Media"];
-          price = data["price"];
-          idea = data["Idea behined the work"];
-          ownerName = data["owner"];
+          //check if ID sent is equal to the block's id
+          if (ID == data["ID"]) {
+            //get data needed from blockchain
+            productName = data["product name"];
+            artistName = data["artist name"];
+            size = data["size"];
+            media = data["Media"];
+            price = data["price"];
+            idea = data["Idea behined the work"];
+            ownerName = data["owner"];
 
-          //Draw data onto canvas (except date and company sign)
-          ctx.fillText(ownerName, 250, 220);
-          ctx.fillText(productName, 150, 270);
-          ctx.fillText(artistName, 160, 305);
-          ctx.fillText(size, 110, 345);
-          ctx.fillText(media, 90, 400);
-          ctx.fillText(price + " $", 120, 440);
-          ctx.fillText(idea, 80, 500);
-        }
+            //Draw data onto canvas (except date and company sign)
+            ctx.fillText(ownerName, 250, 220);
+            ctx.fillText(productName, 150, 270);
+            ctx.fillText(artistName, 160, 305);
+            ctx.fillText(size, 110, 345);
+            ctx.fillText(media, 90, 400);
+            ctx.fillText(price + " $", 120, 440);
+            ctx.fillText(idea, 80, 500);
+          }
 
-      } //end of for transaction  loop
-
+        } //end of for transaction  loop
+      } //end of for each block loop
     })
     .catch(error => {
       console.log(error);

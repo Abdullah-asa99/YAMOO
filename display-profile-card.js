@@ -15,15 +15,17 @@ await fetch("pbft/blockchain.json")
 }
 )
 .then(function (resp) {
-    //for each transaction in the block
-    for (var transactionNum = 0; transactionNum < resp[1]["data"].length; transactionNum ++) {
-        var data = resp[1]["data"][transactionNum]["input"]["data"]["data"];
-        //console.log(data["ID"]);
+    for (var blockNum = 1; blockNum < resp.length; blockNum++) {
+      //for each transaction in the block
+      for (var transactionNum = 0; transactionNum < resp[1]["data"].length; transactionNum ++) {
+          var data = resp[blockNum]["data"][transactionNum]["input"]["data"]["data"];
+          //console.log(data["ID"]);
 
-        //if the itemID from URL is id from blockchain
-        if (data["ID"] == ID) {
-            document.getElementById("artistName").innerHTML = data["artist name"];
-        }
+          //if the itemID from URL is id from blockchain
+          if (data["ID"] == ID) {
+              document.getElementById("artistName").innerHTML = data["artist name"];
+          }
+      }
     }
 
 })
