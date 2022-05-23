@@ -2,6 +2,7 @@
 //sayHi('John'); // Hello, John!
 /* import {verifySignature} from "../../pbft/sandbox.js";
  */
+hello
 
 //Between line 1 and 10 contains ID of item to fetch from blockchain (this comes from URL parameter) 
 const currentURL = new URL(location.href);
