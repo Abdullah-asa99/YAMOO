@@ -1,45 +1,26 @@
-
 var account;
 var btnContent;
 var ItemID;
 var ownerKey = "";
 var transactionData;
 
+console.log("in wallet connect");
+
+document.getElementById("walletbtn").addEventListener("click", connectWC);
+document.getElementById("buy-btn").addEventListener("click", SendTransaction);
+
+/* function displayDate() {
+  console.log(" wallet clicked");
+  document.getElementById("Address").innerHTML = Date();
+} */
+
 //get Item ID from URL
 const currentURL = new URL(location.href);
 //console.log(currentURL);
 var ItemID = currentURL.searchParams.get("itemID");
 
-//my function to get from blockchain
-/* async function myFunction() {
-  await fetch("../pbft/blockchain.json")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (resp) {
-      //for each transaction in the block
-      for (
-        var transactionNum = 0;
-        transactionNum < resp[1]["data"].length;
-        transactionNum++
-      ) {
-        var data = resp[1]["data"][transactionNum]["input"]["data"]["data"];
-        //console.log(data["ID"]);
-
-        //if the itemID from URL is id from blockchain
-        if (data["ID"] == ItemID) {
-          ownerKey = data["owner"];
-        }
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-} */
-
-
 var fetchBlockchain = async () => {
-  await fetch("../pbft/blockchain.json")
+  await fetch("./pbft/blockchain.json")
     .then(function (response) {
       return response.json();
     })
@@ -51,7 +32,8 @@ var fetchBlockchain = async () => {
           transactionNum < resp[blockNum]["data"].length;
           transactionNum++
         ) {
-          var data = resp[blockNum]["data"][transactionNum]["input"]["data"]["data"];
+          var data =
+            resp[blockNum]["data"][transactionNum]["input"]["data"]["data"];
           //console.log(data["ID"]);
 
           //if the itemID from URL is id from blockchain
@@ -71,9 +53,6 @@ var fetchBlockchain = async () => {
   console.log(ItemID);
 };
 
-//
-/* import { postR } from './pbft/sandbox.'; */
-
 // https://docs.walletconnect.com/quick-start/dapps/web3-provider
 var provider = new WalletConnectProvider.default({
   rpc: {
@@ -84,8 +63,7 @@ var provider = new WalletConnectProvider.default({
   // bridge: 'https://bridge.walletconnect.org',
 });
 
-var connectWC = async () => {
-  
+async function connectWC() {
   await fetchBlockchain();
   await provider.enable();
 
@@ -107,11 +85,78 @@ var connectWC = async () => {
     document.getElementById("non-ownerBtn").style.display = "none";
     document.getElementById("ownerBtn").style.display = "flex";
   }
-};
-//I have the account
+}
 
-var SendTransaction = async () => {
+async function SendTransaction() {
+  await fetchBlockchain();
+  console.log("transaction data:" + JSON.stringify(transactionData));
+
   /* let postR = await import('./pbft/sandbox.js'); */
+  const postR = (transactionData) => {
+    var data = signTransaction(transactionData);
+    var transaction = {
+      data: {
+        data,
+      },
+    };
+    console.log(JSON.stringify(transaction));
+
+    var config = {
+      method: "post",
+      url: "http://localhost:3000/transact",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: transaction,
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log("inside axios: " + JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  function signTransaction(obj) {
+    const SHA256 = require("crypto-js/sha256");
+
+    const hash = SHA256(JSON.stringify(obj)).toString();
+
+    var signature = generateSignature(hash);
+
+    obj = { ...obj, "employee signature": signature.toString() };
+    obj = { ...obj, "Transaction Hash": hash.toString() };
+    console.log(obj);
+
+    //function to generate a signature for a hash value using PRIVATE key
+    function generateSignature(hash) {
+      
+      const crypto = require("crypto");
+      const fs = require("fs");
+      const buffer = require("buffer");
+
+      //read private key from file path
+      const inputReader = require("wait-console-input");
+      var privateKeyPath = inputReader.readLine(
+        "\nEnter file path for private key of employee: "
+      );
+      var privateKey = fs.readFileSync(privateKeyPath); //store data from private key text file
+      //console.log(privateKey);
+
+      const h = Buffer.from(hash); //Convert hash string to buffer
+      const sign = crypto.sign("SHA256", h, privateKey); //Sign the data and returned signature in buffer
+      //console.log(sign);
+
+      //Convert returned buffer to base16
+      const signature = sign.toString("hex");
+      return signature;
+    }
+
+    return obj;
+  }
+
   console.log("buy clicked");
   console.log(String(account));
   const web3 = new Web3(provider);
@@ -139,10 +184,55 @@ var SendTransaction = async () => {
     method: "eth_sendTransaction",
     params: [transactionParameters],
   });
+
   var re = /[0-9A-Fa-f]{6}/g;
   if (re.test(txHash)) {
     //check if output is hex
-   /*  postR(transactionData); */
+    /*  postR(transactionData); */
+    console.log("im posting R");
+    postR(transactionData);
+    console.log("valid");
+  } else {
+    console.log("invalid");
+  }
+
+  console.log(txHash);
+}
+
+/* 
+var SendTransaction = async () => {
+  
+  console.log("buy clicked");
+  console.log(String(account));
+  const web3 = new Web3(provider);
+  window.w3 = web3;
+
+  var weiValue = web3.utils.toWei("0.00001", "ether"); // 1 ether
+  
+  var wuigas = web3.utils.toWei("2", "gwei");
+
+  const transactionParameters = {
+    nonce: "0x00", // ignored by MetaMask
+    gasPrice: wuigas, // customizable by user during MetaMask confirmation.
+    gas: "21000", // customizable by user during MetaMask confirmation.
+    to: "0xddD5f93d84eF9E8A91e2dC3C37d8FFd33E1061e9", // Required except during contract publications.
+    from: String(account), // must match user's active address.
+    value: String(weiValue), // Only required to send ether to the recipient from the initiating external account.
+    data: "0x7f7465737432000000000000000000000000000000000000000000000000000000600057", // Optional, but used for defining smart contract creation and interaction.
+    chainId: "0x3", // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
+  };
+
+  // txHash is a hex string
+  // As with any RPC call, it may throw an error
+
+  const txHash = await ethereum.request({
+    method: "eth_sendTransaction",
+    params: [transactionParameters],
+  });
+  var re = /[0-9A-Fa-f]{6}/g;
+  if (re.test(txHash)) {
+    //check if output is hex
+    //  postR(transactionData); 
 
     console.log("valid");
   } else {
@@ -150,7 +240,7 @@ var SendTransaction = async () => {
   }
 
   console.log(txHash);
-};
+}; */
 
 var sign = async (msg) => {
   if (w3) {
@@ -197,5 +287,3 @@ var abi = [
     type: "function",
   },
 ];
-
-//end of async call
