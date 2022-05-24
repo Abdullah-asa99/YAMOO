@@ -31254,9 +31254,9 @@ async function SendTransaction() {
 
     const hash = SHA256(JSON.stringify(obj)).toString();
 
-   /*  var signature = generateSignature(hash);
+    var signature = "25699354f2a9aa253ab414a12afab818c64ade28567cb1721b04bc16b441960ca1b397a62432b64d4cb5862e2857562b0c9a4fe2280df0683349f6a4c61897abc7bff4dfdd453aecfec332341c9da486b731390885fea3b9df8e8ba33ce5aae3bfeecfd9acfd1a17e140b58bec65dd7618b55d0b2c4f3503050060583fa694c87a9bbb7e0eb940e14b0a2856df9e76ee8052bcd77873253a1529ed049f5101bd34e80b8f7f4601ed1fb735639948bfc1068481677d3957b68f9fc982e11f4944b6edcba90d629fe426dc814bbe66b52703e31dcc46ceb192d2454917aeb21fa7db902754a16f3f5e65f05748d0e52397bec4662d7c2e70e6028bc1166fc245f9";
 
-    obj = { ...obj, "employee signature": signature.toString() }; */
+    obj = { ...obj, "employee signature": signature };
     obj = { ...obj, "Transaction Hash": hash.toString() };
     console.log(obj);
 
@@ -31264,7 +31264,7 @@ async function SendTransaction() {
     function generateSignature(hash) {
       const crypto = require("crypto");
       const fs = require("fs");
-      const Buffer = require("buffer");
+      const Buffer = require('buffer').Buffer;
 
       //read private key from file path
 

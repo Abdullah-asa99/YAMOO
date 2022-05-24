@@ -1,6 +1,6 @@
-const inputReader = require("wait-console-input");
+const inputReaderr = require("wait-console-input");
 
-let selection = inputReader.readInteger(
+let selection = inputReaderr.readInteger(
   "Please select a function:\n1- GET transactions.\n2- GET blocks.\n3- POST transaction.\n",
   {
     reInputOnError: true,
@@ -12,7 +12,7 @@ let selection = inputReader.readInteger(
 
 var transactionData;
 if (selection == 3) {
-  transactionData = inputReader.readLine("Please enter the transaction:\n");
+  transactionData = inputReaderr.readLine("Please enter the transaction:\n");
   console.log(transactionData);
 }
 
@@ -92,10 +92,10 @@ if (selection == 3) {
 
   axios(config)
     .then(function (response) {
-      const fs = require("fs");
+      const fss = require("fs");
 
       const jsonString = JSON.stringify(response.data);
-      fs.writeFile("./blockchain.json", jsonString, (err) => {
+      fss.writeFile("./blockchain.json", jsonString, (err) => {
         if (err) {
           console.log("Error writing file", err);
         } else {
@@ -138,19 +138,19 @@ function signTransaction(obj) {
 
   //function to generate a signature for a hash value using PRIVATE key
   function generateSignature(hash) {
-    const crypto = require("crypto");
-    const fs = require("fs");
-    const buffer = require("buffer");
+    const cryptoo = require("crypto");
+    const fss = require("fs");
+    const Bufferr = require('buffer').Buffer;
 
     //read private key from file path
-    var privateKeyPath = inputReader.readLine(
+    var privateKeyPath = inputReaderr.readLine(
       "\nEnter file path for private key of employee: "
     );
-    var privateKey = fs.readFileSync(privateKeyPath); //store data from private key text file
-    //console.log(privateKey);
+    var privateKey = fss.readFileSync(privateKeyPath); //store data from private key text file
+    /* console.log(hash.toString()); */
 
-    const h = Buffer.from(hash); //Convert hash string to buffer
-    const sign = crypto.sign("SHA256", h, privateKey); //Sign the data and returned signature in buffer
+    const h = Bufferr.from(hash); //Convert hash string to buffer
+    const sign = cryptoo.sign("SHA256", h, privateKey); //Sign the data and returned signature in buffer
     //console.log(sign);
 
     //Convert returned buffer to base16
@@ -163,22 +163,23 @@ function signTransaction(obj) {
 
 //verify signature string using PUBLIC key of employee
 //empName comes from blockchain
-function verifySignature(signature, empName, hash) {
-  const crypto = require("crypto");
-  const fs = require("fs");
-  const buffer = require("buffer");
+/* function verifySignature(signature, empName, hash) {
+  const cryptoo = require("crypto");
+  const fss = require("fs");
+  const Bufferr = require("buffer");
 
   //generate a path for public key
   const publicKeyPath = empName + "-publickey.txt";
   //read public key from file path
-  const publicKey = fs.readFileSync(publicKeyPath);
+  const publicKey = fss.readFileSync(publicKeyPath);
   //convert signature string to buffer
-  const signatureBuffer = Buffer.from(signature);
+  const signatureBuffer = Bufferr.from(signature);
 
-  const h = Buffer.from(hash); //hash value of transaction
+  const h = Bufferr.from(hash); //hash value of transaction
 
   //verify signature to see if its ok or not
-  const isVerified = crypto.verify("SHA256", h, publicKey, signatureBuffer);
+  const isVerified = cryptoo.verify("SHA256", h, publicKey, signatureBuffer);
 
   return isVerified;
 }
+ */
