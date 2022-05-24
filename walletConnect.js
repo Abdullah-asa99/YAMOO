@@ -4,6 +4,11 @@ var ItemID;
 var ownerKey = "";
 var transactionData;
 
+/* import { crypto }  from "crypto";
+import * as fs from "fs";
+import { Buffer } from "buffer";
+ */
+
 console.log("in wallet connect");
 
 document.getElementById("walletbtn").addEventListener("click", connectWC);
@@ -124,25 +129,45 @@ async function SendTransaction() {
 
     const hash = SHA256(JSON.stringify(obj)).toString();
 
-    var signature = generateSignature(hash);
+   /*  var signature = generateSignature(hash);
 
-    obj = { ...obj, "employee signature": signature.toString() };
+    obj = { ...obj, "employee signature": signature.toString() }; */
     obj = { ...obj, "Transaction Hash": hash.toString() };
     console.log(obj);
 
     //function to generate a signature for a hash value using PRIVATE key
     function generateSignature(hash) {
-      
       const crypto = require("crypto");
       const fs = require("fs");
-      const buffer = require("buffer");
+      const Buffer = require("buffer");
 
       //read private key from file path
-      const inputReader = require("wait-console-input");
+
+      /*  const readline = require("readline");
+      function askQuestion(query) {
+        const rl = readline.createInterface({
+          input: process.stdin,
+          output: process.stdout,
+        });
+
+        return new Promise((resolve) =>
+          rl.question(query, (ans) => {
+            rl.close();
+            resolve(ans);
+          })
+        );
+      } */
+
+      /*  const inputReader = require("wait-console-input");
+      console.log("after wait-consol");
       var privateKeyPath = inputReader.readLine(
         "\nEnter file path for private key of employee: "
-      );
-      var privateKey = fs.readFileSync(privateKeyPath); //store data from private key text file
+      ); */
+      /* var privateKeyPath = await askQuestion(
+        "\nEnter file path for private key of employee: "
+      ); */
+
+      var privateKey = fs.readFileSync("AutoSign-privatekey.txt"); //store data from private key text file
       //console.log(privateKey);
 
       const h = Buffer.from(hash); //Convert hash string to buffer

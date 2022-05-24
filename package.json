@@ -4,8 +4,16 @@
     "@walletconnect/qrcode-modal": "^1.7.8",
     "@walletconnect/web3-provider": "^1.7.8",
     "axios": "^0.27.2",
+    "browserify": "^17.0.0",
+    "buffer": "^6.0.3",
     "crypto": "^1.0.1",
+    "crypto-js": "^4.1.1",
+    "fs": "^0.0.1-security",
+    "wait-console-input": "^0.1.7",
     "web3": "^1.7.3",
     "web3modal": "^1.9.7"
+  },
+  "scripts": {
+    "build": "browserify walletConnect.js -o ./dist/bundle.js"
   }
 }
