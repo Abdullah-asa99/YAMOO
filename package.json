@@ -6,10 +6,12 @@
     "axios": "^0.27.2",
     "browserify": "^17.0.0",
     "buffer": "^6.0.3",
+    "child_process": "^1.0.2",
     "crypto": "^1.0.1",
     "crypto-js": "^4.1.1",
     "fs": "^0.0.1-security",
     "request": "^2.88.2",
+    "shelljs": "^0.8.5",
     "wait-console-input": "^0.1.7",
     "web3": "^1.7.3",
     "web3modal": "^1.9.7"
@@ -17,6 +19,5 @@
   "scripts": {
     "build": "browserify walletConnect.js -o ./dist/bundle.js",
     "build2": "browserify testreq.js -o ./dist/bundle2.js"
-
   }
 }

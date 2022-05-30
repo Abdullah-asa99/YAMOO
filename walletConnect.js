@@ -12,7 +12,10 @@ import { Buffer } from "buffer";
 console.log("in wallet connect");
 
 document.getElementById("walletbtn").addEventListener("click", connectWC);
+document.getElementById("walletbtn2").addEventListener("click", connectWC);
 document.getElementById("buy-btn").addEventListener("click", SendTransaction);
+document.getElementById("paysuccdiv").style.display = "none";
+
 
 /* function displayDate() {
   console.log(" wallet clicked");
@@ -69,11 +72,11 @@ var provider = new WalletConnectProvider.default({
 });
 
 async function connectWC() {
+  document.getElementById("buy-btn").disabled = false;
   await fetchBlockchain();
   await provider.enable();
 
-  
-/* 
+  /* 
   var options = {
     host: "http://localhost:3000",
     
@@ -99,7 +102,15 @@ async function connectWC() {
   walletbtn.onclick = disconnect;
   btnContent = walletbtn.innerHTML;
   walletbtn.innerHTML = "Disconnect";
+
+  var walletbtn2 = document.getElementById("walletbtn2");
+  walletbtn2.onclick = disconnect;
+
+  walletbtn2.innerHTML = "Disconnect";
+
   document.getElementById("Address").innerText = "address: " + account;
+  document.getElementById("buyeraddr").innerText = "Buyer: " + account;
+  document.getElementById("Owneraddr").innerText = "Owner: " + ownerKey;
 
   if (ownerKey == account) {
     //he is owner of this item
@@ -133,8 +144,8 @@ async function SendTransaction() {
     var config = {
       method: "post",
       proxy: {
-        host: 'localhost',
-        port: 3000
+        host: "localhost",
+        port: 3000,
       },
       url: "http://localhost:3000/transact",
       headers: {
@@ -142,7 +153,7 @@ async function SendTransaction() {
       },
       data: transaction,
     };
-     axios(config)
+    axios(config)
       .then(function (response) {
         console.log("inside axios: " + JSON.stringify(response.data));
       })
@@ -204,11 +215,28 @@ async function SendTransaction() {
     console.log("im posting R");
     postR(transactionData);
     console.log("valid");
+    validpayment();
   } else {
     console.log("invalid");
   }
 
   console.log(txHash);
+}
+function validpayment() {
+  console.log("inside validpayment");
+
+  document.getElementById("paysheetinfo").style.display = "none";
+  
+  document.getElementById("buyeraddr").style.display = "none";
+  document.getElementById("Owneraddr").style.display = "none";
+  document.getElementById("buy-btn").style.display = "none";
+  document.getElementById("paysuccdiv").style.display = "flex";
+  
+
+  document.getElementById("canelorder").innerHTML = "Close"
+  
+  document.getElementById("walletbtn2").addEventListener("click", connectWC);
+  document.getElementById("buy-btn").addEventListener("click", SendTransaction);
 }
 
 /* 
@@ -277,6 +305,9 @@ var disconnect = async () => {
   document.getElementById("Address").innerText = "address";
   document.getElementById("walletbtn").innerHTML = btnContent;
   document.getElementById("walletbtn").onclick = connectWC;
+
+  document.getElementById("walletbtn2").innerHTML = btnContent;
+  document.getElementById("walletbtn2").onclick = connectWC;
 
   document.getElementById("non-ownerBtn").style.display = "flex";
   document.getElementById("ownerBtn").style.display = "none";

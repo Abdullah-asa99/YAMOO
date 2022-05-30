@@ -1,25 +1,14 @@
 const connectButton = document.getElementById("connect");
-connectButton.addEventListener("click", sendtrans());
+connectButton.addEventListener("click", sendtrans);
 
-async function sendtrans() {
-  const axios = require("axios");
-  const res = await axios.post("http://localhost:3000/transact", {
-    // `proxy` means the request actually goes to the server listening
-    // on localhost:3000, but the request says it is meant for
-    // 'http://httpbin.org/get?answer=42'
-    data: {
-      temporary: "555888",
-      temporaryy: "555888sdf",
-    },
-    headers: {
-      "Access-Control-Allow-Origin": "localhost:3000",
-      "Content-Type": "application/json",
-      
-    },
-    proxy: {
-      host: "localhost",
-      port: 6600,
-    },
-  });
-  console.log(res.data);
+
+function sendtrans() {
+ /*  var shell = require('shelljs'); */
+  var child_process = require("child_process");
+
+
+  var protractor = child_process.spawn('protractor', ['./sendreq.js'], {shell: true});
+
+
+  console.log("we ran");
 }

@@ -1,0 +1,186 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+ */ /* *,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+html {
+  font-size: 16px;
+  overflow-y: hidden;
+}
+body {
+  font-family: "Red Hat Display", sans-serif, Arial, Helvetica;
+  line-height: 1.5;
+  overflow-y: hidden;
+}
+a {
+  text-decoration: none;
+} */
+/* img {
+  display: block;
+  max-width: 100%;
+} */
+.btn {
+  display: block;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.primary-btn {
+  background: #22dea9;
+  color: #011322;
+  box-shadow: 0 15px 20px rgba(56, 41, 224, 0.25);
+}
+.primary-btn:hover {
+  opacity: 0.8;
+}
+.secondary-btn {
+  color: #7280a7;
+}
+.secondary-btn:hover {
+  color: #1f2f56;
+}
+.summary-wrapper {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  padding: 50px 20px;
+  /* For Extra Space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e8ff
+    url(https://raw.githubusercontent.com/MohamedAridah/frontendmentor_order-summary-component/main/images/pattern-background-desktop.svg)
+    no-repeat;
+  background-size: 100%;
+}
+@media (max-width: 400px) {
+  .summary-wrapper {
+    background-image: url(https://raw.githubusercontent.com/MohamedAridah/frontendmentor_order-summary-component/main/images/pattern-background-mobile.svg);
+  }
+}
+.summary {
+  position: relative;
+  width: 440px;
+  background: #fff;
+  overflow: hidden;
+}
+.summary .summary-info {
+  padding: 45px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+@media (max-width: 450px) {
+  .summary .summary-info {
+    padding: 20px 15px;
+  }
+}
+.summary-description h1 {
+  font-weight: 900;
+  color: #1f2f56;
+  font-size: 27px;
+  margin-bottom: 18px;
+}
+@media (max-width: 450px) {
+  .summary-description h1 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+}
+.summary-description p {
+  color: #7280a7;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+@media (max-width: 450px) {
+  .summary-description p {
+    font-size: 14px;
+  }
+}
+.summary-plan {
+  display: flex;
+ 
+  justify-content: space-between;
+  padding: 23px 25px;
+  margin: 20px 0 32px;
+  background: #f5f7ff;
+  border-radius: 10px;
+  flex-direction: column;
+  
+  align-items: flex-start;
+}
+.summary-plan p{
+  overflow-wrap: break-word;
+  width: 13em;
+  text-align: left;
+}
+@media (max-width: 375px) {
+  .summary-plan {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
+.summary-plan .plan-info {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  text-align: start;
+  margin-bottom: 10px;
+}
+@media (max-width: 375px) {
+  .summary-plan .plan-info {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.summary-plan .plan-link a {
+  color: #3829e0;
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+.summary-plan .plan-link a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+.plan-info .plan-image {
+  /*  flex-shrink: 0; */
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  max-height: 50px;
+  position: relative;
+}
+.plan-info .plan-image > img {
+  /*  flex-shrink: 0; */
+  /* width: auto; */
+  width: 50px;
+  max-height: 50px;
+  overflow-y: hidden;
+  border-radius: 100%;
+}
+.plan-info .plan-details .plan-name {
+  color: #1f2f56;
+  font-size: 16px;
+  font-weight: 900;
+}
+.plan-info .plan-details .plan-price {
+  color: #7280a7;
+  font-size: 17px;
+}
+.summary-subscribe a {
+  margin-bottom: 10px;
+}
+.summary-subscribe button {
+  margin-bottom: 10px;
+}
+.summary-subscribe a:last-child {
+  margin-bottom: 0;
+}

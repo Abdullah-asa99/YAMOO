@@ -23,10 +23,10 @@ var { privateKey, publicKey } = crypto.generateKeyPairSync("rsa", {
 var empName = inputReader.readLine("Please enter the new employee name: ");
 console.log(empName);
 
-privateKey = privateKey.replace("-----BEGIN PRIVATE KEY-----\n", "");
+/* privateKey = privateKey.replace("-----BEGIN PRIVATE KEY-----\n", "");
 privateKey = privateKey.replace("\n-----END PRIVATE KEY-----", "");
 publicKey = publicKey.replace("-----BEGIN PUBLIC KEY-----\n", "");
-publicKey = publicKey.replace("\n-----END PUBLIC KEY-----", "");
+publicKey = publicKey.replace("\n-----END PUBLIC KEY-----", ""); */
 
 //Write private and public key to text file
 fs.writeFile(empName + "-privatekey.txt", privateKey, (err) => {

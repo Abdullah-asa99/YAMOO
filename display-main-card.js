@@ -30,9 +30,11 @@ await fetch("pbft/blockchain.json")
             //if the itemID from URL is id from blockchain
             if (data["ID"] == ID) {
                 document.getElementById("prodname").innerHTML = data["product name"];
+                document.getElementById("prodname2").innerHTML = data["product name"];
                 document.getElementById("art-name").innerHTML = data["artist name"];
                 document.getElementById("authentic").innerHTML = "The item is authentic";
                 document.getElementById("itemPrice").innerHTML = data["price"] + "$";
+                document.getElementById("itemPrice2").innerHTML = data["price"] + "$";
                 document.getElementById("size").innerHTML = data["size"];
                 document.getElementById("artMedia").innerHTML = data["Media"];
                 document.getElementById("idea").innerHTML = data["Idea behined the work"];
@@ -118,6 +120,8 @@ function GetURLFromRealTimeDb(artistName) {
                     //console.log(snapshot.val()[key]);
                     var img = document.getElementById("art-pic");
                     img.src = snapshot.val()[key];
+                    var img2 = document.getElementById("art-pic2");
+                    img2.src = snapshot.val()[key];
                 }
 
             });
@@ -131,6 +135,7 @@ function GetURLFromRealTimeDb(artistName) {
     .catch((error) => {
         console.log(error);
     });
+    
 
 } //end of method
 
@@ -206,7 +211,6 @@ function GetURLFromStorage(artistName) {
         });
 }
 */
-
 
 
 

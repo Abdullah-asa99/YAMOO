@@ -13,7 +13,7 @@ let selection = inputReaderr.readInteger(
 var transactionData;
 if (selection == 3) {
   transactionData = inputReaderr.readLine("Please enter the transaction:\n");
-  console.log(transactionData);
+  /* console.log(transactionData); */
 }
 
 /* const transactionData = {
@@ -32,7 +32,7 @@ if (selection == 3) {
       data,
     },
   };
-  console.log(transaction);
+  /* console.log(transaction); */
 
   var config = {
     method: "post",
@@ -45,7 +45,7 @@ if (selection == 3) {
 
   axios(config)
     .then(function (response) {
-      console.log(JSON.stringify(response.data));
+      console.log("Transaction signed and sent.");
     })
     .catch(function (error) {
       console.log(error);
@@ -134,7 +134,7 @@ function signTransaction(obj) {
 
   obj = { ...obj, "employee signature": signature.toString() };
   obj = { ...obj, "Transaction Hash": hash.toString() };
-  console.log(obj);
+  /* console.log(obj); */
 
   //function to generate a signature for a hash value using PRIVATE key
   function generateSignature(hash) {
@@ -143,18 +143,24 @@ function signTransaction(obj) {
     const Bufferr = require('buffer').Buffer;
 
     //read private key from file path
-    var privateKeyPath = inputReaderr.readLine(
-      "\nEnter file path for private key of employee: "
-    );
-    var privateKey = fss.readFileSync(privateKeyPath); //store data from private key text file
-    /* console.log(hash.toString()); */
+    var privateKeyPath = inputReaderr.readLine("\nEnter file path for private key of employee: ");
+
+    var privateKeyBuffer = fss.readFileSync(privateKeyPath); //store data from private key text file
+    var key = privateKeyBuffer.toString("ascii");
 
     const h = Bufferr.from(hash); //Convert hash string to buffer
-    const sign = cryptoo.sign("SHA256", h, privateKey); //Sign the data and returned signature in buffer
-    //console.log(sign);
+    // const sign = cryptoo.sign("SHA256", h, privateKey); //Sign the data and returned signature in buffer
+    // const signature = sign.toString("hex");     //Convert returned buffer to base16
 
-    //Convert returned buffer to base16
-    const signature = sign.toString("hex");
+
+    //create sign object and sign the hash string value
+    const sign = cryptoo.createSign('RSA-SHA256'); //Sign class object
+    sign.update(hash);
+    //sign.end();
+    const signature = sign.sign(key, "hex");
+    /* console.log(signature); */
+
+
     return signature;
   }
 

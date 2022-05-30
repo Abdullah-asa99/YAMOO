@@ -7,8 +7,9 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.1/dist/umd/index.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-
+    <script src="assets/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/confirm-payment.css" />
     <link rel="stylesheet" href="css/main-card.css" />
     <script
       src="https://kit.fontawesome.com/3fe8aae587.js"
@@ -21,7 +22,6 @@
     <div id="ownerBtn" class="buttons-container owner">
       <div class="button-div">
         <a
-          
           onclick="window.location='locationNew.html'+window.location.search;"
           class="Buy-button"
           >Location</a
@@ -29,7 +29,6 @@
       </div>
       <div class="button-div">
         <a
-          
           onclick="window.location='certificate.html'+window.location.search;"
           class="Buy-button"
           >Certification</a
@@ -37,8 +36,8 @@
       </div>
     </div>
     <div id="non-ownerBtn" class="buttons-container non-owner">
-      <div id="buy-btn" class="button-div">
-        <a  class="Buy-button">buy</a>
+      <div id="open-pay" class="button-div">
+        <a class="Buy-button">buy</a>
       </div>
     </div>
 
@@ -94,10 +93,79 @@
         </div>
       </div>
     </div>
+
+    <div id="paysheet" class="whiteee payment">
+      <div class="swipe-indicator"></div>
+      <div class="summary">
+        <div class="summary-info">
+          <div class="summary-description">
+            <h1>Order Summary</h1>
+          </div>
+          <div class="summary-plan">
+            <div id="paysheetinfo" class="plan-info">
+              <div class="plan-image">
+                <img
+                  id="art-pic2"
+                  src="https://raw.githubusercontent.com/MohamedAridah/frontendmentor_order-summary-component/main/images/icon-music.svg"
+                  alt="Plan Image"
+                />
+              </div>
+              <div class="plan-details">
+                <h2 id="prodname2" class="plan-name">Annual Plan</h2>
+                <span id="itemPrice2" class="plan-price">$59.99/year</span>
+              </div>
+            </div>
+            <div class="plan-link"></div>
+            <p id="buyeraddr">Buyer:</p>
+            <p id="Owneraddr">Owner:</p>
+            <div
+              id="paysuccdiv"
+              style="
+                width: 100%;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                
+              "
+            >
+              <img src="assets/images/succpaymentG.png" style="width: 180px" />
+              <p
+                style="
+                  margin-top: 20px;
+                  margin-bottom: 0;
+                  text-align: center;
+                  font-weight: 600;
+                "
+              >
+                Successful payment
+              </p>
+            </div>
+          </div>
+          <div class="summary-subscribe">
+            <button id="walletbtn2" class="btn primary-btn confirm-payment">
+              Connect wallet
+            </button>
+            <button id="buy-btn" class="btn primary-btn confirm-payment">
+              Proceed to Payment
+            </button>
+            <a id="canelorder" class="btn secondary-btn cancel-subscribe"
+              >Cancel Order</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="my-row">
       <div class="example-1 my-card">
         <div class="wrapper">
-          <div class="art-pic"><img src="" alt="" id="art-pic" /></div>
+          <div class="art-pic">
+            <div class="main" id="loadingIcon">
+              <div class="loader"></div>
+            </div>
+            <img src="" alt="" id="art-pic" />
+          </div>
+
           <div class="the-cards">
             <div
               ontouchstart="touchStart(event)"
@@ -112,10 +180,10 @@
                   <ul>
                     <li>
                       <img
-                        src="..."
+                        src="assets/images/man.png"
                         id="artist-picture"
-                        class="img-thumbnail rounded-circle"
-                        alt=" artist pic"
+                        class="roundedcircle"
+                        alt=""
                       />
                     </li>
                     <li>
@@ -263,11 +331,30 @@
       </div>
     </div>
 
+    <script>
+      var buybtnn = document.getElementById("buy-btn");
+      var paysheet = document.getElementById("paysheet");
+      var open_paybtn = document.getElementById("open-pay");
+      var cancelbtn = document.getElementById("canelorder");
+      paysheet.style.transition = "height 300ms";
+      buybtnn.disabled = true;
+      cancelbtn.addEventListener("click", () => {
+        paysheet.style.height = "0px";
+      });
+      open_paybtn.addEventListener("click", () => {
+        paysheet.style.height = "70vh";
+      });
+    </script>
+
     <!-- card move code -->
     <script>
       var expanded = false;
 
       let card = document.getElementById("backSheet");
+      let buybtn = document.getElementById("non-ownerBtn");
+
+      buybtn.style.top = "85vh";
+      buybtn.style.transition = "top 300ms";
       card.style.height = "350px";
       card.style.transition = "height 300ms";
       var startingX, startingY, movingX, movingY;
@@ -288,9 +375,11 @@
           //console.log("down");
           expanded = false;
           card.style.height = "350px";
+          buybtn.style.top = "85vh";
         } else if (startingY - 100 > movingY && !expanded) {
           //console.log("up");
           card.style.height = "640px";
+          buybtn.style.top = "90vh";
           expanded = true;
         }
       }
@@ -405,9 +494,9 @@
 
     <script type="module" src="display-main-card.js"></script>
     <!-- <script type="module" src="walletConnect.js"></script> -->
-    <script src="assets/bootstrap.bundle.min.js"></script>
 
     <script type="module" src="URLgenerator.js"></script>
     <script src="./dist/bundle.js"></script>
+    <script src="./dist/Verifybundle.js"></script>
   </body>
 </html>
