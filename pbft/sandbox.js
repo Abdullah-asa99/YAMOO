@@ -1,5 +1,5 @@
 const inputReaderr = require("wait-console-input");
-
+var axios = require("axios");
 let selection = inputReaderr.readInteger(
   "Please select a function:\n1- GET transactions.\n2- GET blocks.\n3- POST transaction.\n",
   {
@@ -24,7 +24,7 @@ if (selection == 3) {
 
  const postR = (transactionData) => {
   console.log("post inside");
-  var axios = require("axios");
+  
 
   var data = signTransaction(JSON.parse(transactionData));
   var transaction = {
@@ -32,7 +32,7 @@ if (selection == 3) {
       data,
     },
   };
-  console.log(JSON.stringify(transaction));
+  console.log(transaction);
 
   var config = {
     method: "post",

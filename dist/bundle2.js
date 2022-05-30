@@ -1,6 +1,28 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+module.exports = {
+  foo: async function () {
+    console.log("called foo");
+    const axios = require("axios");
+    const res = await axios.post("http://localhost:3000/transact", {
+      // `proxy` means the request actually goes to the server listening
+      // on localhost:3000, but the request says it is meant for
+      // 'http://httpbin.org/get?answer=42'
+      data: {
+        temporary: "555888",
+        temporaryy: "555888sdf",
+      },
+      headers: {
+        "Content-Type": "application/json",
+        /* host: "http://localhost:3000", */
+      },
+    });
+    console.log(res.data);
+  },
+};
+
+},{"axios":2}],2:[function(require,module,exports){
 module.exports = require('./lib/axios');
-},{"./lib/axios":3}],2:[function(require,module,exports){
+},{"./lib/axios":4}],3:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -224,7 +246,7 @@ module.exports = function xhrAdapter(config) {
   });
 };
 
-},{"../cancel/CanceledError":5,"../core/AxiosError":8,"../core/buildFullPath":10,"../defaults/transitional":16,"../helpers/parseProtocol":28,"./../core/settle":13,"./../helpers/buildURL":19,"./../helpers/cookies":21,"./../helpers/isURLSameOrigin":24,"./../helpers/parseHeaders":27,"./../utils":32}],3:[function(require,module,exports){
+},{"../cancel/CanceledError":6,"../core/AxiosError":9,"../core/buildFullPath":11,"../defaults/transitional":17,"../helpers/parseProtocol":29,"./../core/settle":14,"./../helpers/buildURL":20,"./../helpers/cookies":22,"./../helpers/isURLSameOrigin":25,"./../helpers/parseHeaders":28,"./../utils":33}],4:[function(require,module,exports){
 'use strict';
 
 var utils = require('./utils');
@@ -290,7 +312,7 @@ module.exports = axios;
 // Allow use of default import syntax in TypeScript
 module.exports.default = axios;
 
-},{"../lib/core/AxiosError":8,"./cancel/CancelToken":4,"./cancel/CanceledError":5,"./cancel/isCancel":6,"./core/Axios":7,"./core/mergeConfig":12,"./defaults":15,"./env/data":17,"./helpers/bind":18,"./helpers/isAxiosError":23,"./helpers/spread":29,"./helpers/toFormData":30,"./utils":32}],4:[function(require,module,exports){
+},{"../lib/core/AxiosError":9,"./cancel/CancelToken":5,"./cancel/CanceledError":6,"./cancel/isCancel":7,"./core/Axios":8,"./core/mergeConfig":13,"./defaults":16,"./env/data":18,"./helpers/bind":19,"./helpers/isAxiosError":24,"./helpers/spread":30,"./helpers/toFormData":31,"./utils":33}],5:[function(require,module,exports){
 'use strict';
 
 var CanceledError = require('./CanceledError');
@@ -411,7 +433,7 @@ CancelToken.source = function source() {
 
 module.exports = CancelToken;
 
-},{"./CanceledError":5}],5:[function(require,module,exports){
+},{"./CanceledError":6}],6:[function(require,module,exports){
 'use strict';
 
 var AxiosError = require('../core/AxiosError');
@@ -435,14 +457,14 @@ utils.inherits(CanceledError, AxiosError, {
 
 module.exports = CanceledError;
 
-},{"../core/AxiosError":8,"../utils":32}],6:[function(require,module,exports){
+},{"../core/AxiosError":9,"../utils":33}],7:[function(require,module,exports){
 'use strict';
 
 module.exports = function isCancel(value) {
   return !!(value && value.__CANCEL__);
 };
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -604,7 +626,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = Axios;
 
-},{"../helpers/buildURL":19,"../helpers/validator":31,"./../utils":32,"./InterceptorManager":9,"./buildFullPath":10,"./dispatchRequest":11,"./mergeConfig":12}],8:[function(require,module,exports){
+},{"../helpers/buildURL":20,"../helpers/validator":32,"./../utils":33,"./InterceptorManager":10,"./buildFullPath":11,"./dispatchRequest":12,"./mergeConfig":13}],9:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -692,7 +714,7 @@ AxiosError.from = function(error, code, config, request, response, customProps) 
 
 module.exports = AxiosError;
 
-},{"../utils":32}],9:[function(require,module,exports){
+},{"../utils":33}],10:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -748,7 +770,7 @@ InterceptorManager.prototype.forEach = function forEach(fn) {
 
 module.exports = InterceptorManager;
 
-},{"./../utils":32}],10:[function(require,module,exports){
+},{"./../utils":33}],11:[function(require,module,exports){
 'use strict';
 
 var isAbsoluteURL = require('../helpers/isAbsoluteURL');
@@ -770,7 +792,7 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
   return requestedURL;
 };
 
-},{"../helpers/combineURLs":20,"../helpers/isAbsoluteURL":22}],11:[function(require,module,exports){
+},{"../helpers/combineURLs":21,"../helpers/isAbsoluteURL":23}],12:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -859,7 +881,7 @@ module.exports = function dispatchRequest(config) {
   });
 };
 
-},{"../cancel/CanceledError":5,"../cancel/isCancel":6,"../defaults":15,"./../utils":32,"./transformData":14}],12:[function(require,module,exports){
+},{"../cancel/CanceledError":6,"../cancel/isCancel":7,"../defaults":16,"./../utils":33,"./transformData":15}],13:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -961,7 +983,7 @@ module.exports = function mergeConfig(config1, config2) {
   return config;
 };
 
-},{"../utils":32}],13:[function(require,module,exports){
+},{"../utils":33}],14:[function(require,module,exports){
 'use strict';
 
 var AxiosError = require('./AxiosError');
@@ -988,7 +1010,7 @@ module.exports = function settle(resolve, reject, response) {
   }
 };
 
-},{"./AxiosError":8}],14:[function(require,module,exports){
+},{"./AxiosError":9}],15:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1012,7 +1034,7 @@ module.exports = function transformData(data, headers, fns) {
   return data;
 };
 
-},{"../defaults":15,"./../utils":32}],15:[function(require,module,exports){
+},{"../defaults":16,"./../utils":33}],16:[function(require,module,exports){
 (function (process){(function (){
 'use strict';
 
@@ -1162,7 +1184,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 module.exports = defaults;
 
 }).call(this)}).call(this,require('_process'))
-},{"../adapters/http":2,"../adapters/xhr":2,"../core/AxiosError":8,"../helpers/normalizeHeaderName":25,"../helpers/toFormData":30,"../utils":32,"./env/FormData":26,"./transitional":16,"_process":36}],16:[function(require,module,exports){
+},{"../adapters/http":3,"../adapters/xhr":3,"../core/AxiosError":9,"../helpers/normalizeHeaderName":26,"../helpers/toFormData":31,"../utils":33,"./env/FormData":27,"./transitional":17,"_process":37}],17:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -1171,11 +1193,11 @@ module.exports = {
   clarifyTimeoutError: false
 };
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 module.exports = {
   "version": "0.27.2"
 };
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 module.exports = function bind(fn, thisArg) {
@@ -1188,7 +1210,7 @@ module.exports = function bind(fn, thisArg) {
   };
 };
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1260,7 +1282,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
   return url;
 };
 
-},{"./../utils":32}],20:[function(require,module,exports){
+},{"./../utils":33}],21:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1276,7 +1298,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
     : baseURL;
 };
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1331,7 +1353,7 @@ module.exports = (
     })()
 );
 
-},{"./../utils":32}],22:[function(require,module,exports){
+},{"./../utils":33}],23:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1347,7 +1369,7 @@ module.exports = function isAbsoluteURL(url) {
   return /^([a-z][a-z\d+\-.]*:)?\/\//i.test(url);
 };
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1362,7 +1384,7 @@ module.exports = function isAxiosError(payload) {
   return utils.isObject(payload) && (payload.isAxiosError === true);
 };
 
-},{"./../utils":32}],24:[function(require,module,exports){
+},{"./../utils":33}],25:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1432,7 +1454,7 @@ module.exports = (
     })()
 );
 
-},{"./../utils":32}],25:[function(require,module,exports){
+},{"./../utils":33}],26:[function(require,module,exports){
 'use strict';
 
 var utils = require('../utils');
@@ -1446,11 +1468,11 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
   });
 };
 
-},{"../utils":32}],26:[function(require,module,exports){
+},{"../utils":33}],27:[function(require,module,exports){
 // eslint-disable-next-line strict
 module.exports = null;
 
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 'use strict';
 
 var utils = require('./../utils');
@@ -1505,7 +1527,7 @@ module.exports = function parseHeaders(headers) {
   return parsed;
 };
 
-},{"./../utils":32}],28:[function(require,module,exports){
+},{"./../utils":33}],29:[function(require,module,exports){
 'use strict';
 
 module.exports = function parseProtocol(url) {
@@ -1513,7 +1535,7 @@ module.exports = function parseProtocol(url) {
   return match && match[1] || '';
 };
 
-},{}],29:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1542,7 +1564,7 @@ module.exports = function spread(callback) {
   };
 };
 
-},{}],30:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 (function (Buffer){(function (){
 'use strict';
 
@@ -1618,7 +1640,7 @@ function toFormData(obj, formData) {
 module.exports = toFormData;
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"../utils":32,"buffer":34}],31:[function(require,module,exports){
+},{"../utils":33,"buffer":35}],32:[function(require,module,exports){
 'use strict';
 
 var VERSION = require('../env/data').version;
@@ -1706,7 +1728,7 @@ module.exports = {
   validators: validators
 };
 
-},{"../core/AxiosError":8,"../env/data":17}],32:[function(require,module,exports){
+},{"../core/AxiosError":9,"../env/data":18}],33:[function(require,module,exports){
 'use strict';
 
 var bind = require('./helpers/bind');
@@ -2178,7 +2200,7 @@ module.exports = {
   isFileList: isFileList
 };
 
-},{"./helpers/bind":18}],33:[function(require,module,exports){
+},{"./helpers/bind":19}],34:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -2330,7 +2352,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],34:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 (function (Buffer){(function (){
 /*!
  * The buffer module from node.js, for the browser.
@@ -4111,7 +4133,7 @@ function numberIsNaN (obj) {
 }
 
 }).call(this)}).call(this,require("buffer").Buffer)
-},{"base64-js":33,"buffer":34,"ieee754":35}],35:[function(require,module,exports){
+},{"base64-js":34,"buffer":35,"ieee754":36}],36:[function(require,module,exports){
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
@@ -4198,7 +4220,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],36:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -4384,307 +4406,37 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],37:[function(require,module,exports){
-var account;
-var btnContent;
-var ItemID;
-var ownerKey = "";
-var transactionData;
+},{}],38:[function(require,module,exports){
+const connectButton = document.getElementById("connect");
+connectButton.addEventListener("click", sendtrans());
 
-/* import { crypto }  from "crypto";
-import * as fs from "fs";
-import { Buffer } from "buffer";
+var tools = require("./export-post.js");
+function sendtrans() {
+  console.log(typeof tools.foo);
+}
+
+/* async function sendtrans() {
+  const axios = require("axios");
+  const res = await axios.post("http://localhost:3000/transact", {
+    // `proxy` means the request actually goes to the server listening
+    // on localhost:3000, but the request says it is meant for
+    // 'http://httpbin.org/get?answer=42'
+    data: {
+      temporary: "555888",
+      temporaryy: "555888sdf",
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "localhost:3000",
+      "Content-Type": "application/json",
+      
+    },
+    proxy: {
+      host: "localhost",
+      port: 6600,
+    },
+  });
+  console.log(res.data);
+}
  */
 
-console.log("in wallet connect");
-
-document.getElementById("walletbtn").addEventListener("click", connectWC);
-document.getElementById("buy-btn").addEventListener("click", SendTransaction);
-
-/* function displayDate() {
-  console.log(" wallet clicked");
-  document.getElementById("Address").innerHTML = Date();
-} */
-
-//get Item ID from URL
-const currentURL = new URL(location.href);
-//console.log(currentURL);
-var ItemID = currentURL.searchParams.get("itemID");
-
-var fetchBlockchain = async () => {
-  await fetch("./pbft/blockchain.json")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (resp) {
-      for (var blockNum = 1; blockNum < resp.length; blockNum++) {
-        //for each transaction in the block
-        for (
-          var transactionNum = 0;
-          transactionNum < resp[blockNum]["data"].length;
-          transactionNum++
-        ) {
-          var data =
-            resp[blockNum]["data"][transactionNum]["input"]["data"]["data"];
-          //console.log(data["ID"]);
-
-          //if the itemID from URL is id from blockchain
-          if (data["ID"] == ItemID) {
-            ownerKey = data["owner"];
-            transactionData = data;
-            return ownerKey;
-          }
-        }
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  console.log("inside fetch");
-  console.log(ownerKey);
-  console.log(ItemID);
-};
-
-// https://docs.walletconnect.com/quick-start/dapps/web3-provider
-var provider = new WalletConnectProvider.default({
-  rpc: {
-    1: "https://cloudflare-eth.com/", // https://ethereumnodes.com/
-    137: "https://polygon-rpc.com/", // https://docs.polygon.technology/docs/develop/network-details/network/
-    // ...
-  },
-  // bridge: 'https://bridge.walletconnect.org',
-});
-
-async function connectWC() {
-  await fetchBlockchain();
-  await provider.enable();
-
-  
-/* 
-  var options = {
-    host: "http://localhost:3000",
-    
-    path: "http://localhost:3000",
-    headers: {
-      
-      "Content-Type": "application/json",
-    },
-  };
-  http.get(options, function (res) {
-    console.log(res);
-    res.pipe(process.stdout);
-  });
-  console.log("inside connect wc"); */
-
-  //  Create Web3 instance
-  const web3 = new Web3(provider);
-  window.w3 = web3;
-
-  var accounts = await web3.eth.getAccounts(); // get all connected accounts
-  account = accounts[0]; // get the primary account
-  var walletbtn = document.getElementById("walletbtn");
-  walletbtn.onclick = disconnect;
-  btnContent = walletbtn.innerHTML;
-  walletbtn.innerHTML = "Disconnect";
-  document.getElementById("Address").innerText = "address: " + account;
-
-  if (ownerKey == account) {
-    //he is owner of this item
-
-    document.getElementById("non-ownerBtn").style.display = "none";
-    document.getElementById("ownerBtn").style.display = "flex";
-  }
-}
-
-async function SendTransaction() {
-  await fetchBlockchain();
-
-  /*  console.log("transaction data:" + JSON.stringify(transactionData));
-   */
-  /* let postR = await import('./pbft/sandbox.js'); */
-  const postR = async (transactionData) => {
-    console.log(
-      "transaction data inside postR" + JSON.stringify(transactionData)
-    );
-    var data = await signTransaction(transactionData);
-    console.log("data after signTransaction" + JSON.stringify(transactionData));
-
-    /* console.log("transaction data" + data); */
-    var transaction = {
-      data: {
-        data,
-      },
-    };
-    console.log(JSON.stringify(transaction));
-    var axios = require("axios");
-    var config = {
-      method: "post",
-      proxy: {
-        host: 'localhost',
-        port: 3000
-      },
-      url: "http://localhost:3000/transact",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: transaction,
-    };
-     axios(config)
-      .then(function (response) {
-        console.log("inside axios: " + JSON.stringify(response.data));
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  async function signTransaction(obj) {
-    /* const SHA256 = require("crypto-js/sha256");
-
-    const hash = SHA256(JSON.stringify(obj)).toString(); */
-
-    /* var signature = await generateSignature(hash); */
-    /* obj["employee signature"] = signature; */
-    /* obj["Transaction Hash"] = hash.toString(); */
-    /* obj = { ...obj, "employee signature": signature };
-    obj = { ...obj, "Transaction Hash": hash.toString() }; */
-    obj["previous owners"] = obj["owner"];
-    obj["owner"] = String(account);
-
-    //function to generate a signature for a hash value using PRIVATE key
-
-    return obj;
-  }
-
-  console.log("buy clicked");
-  console.log(String(account));
-  const web3 = new Web3(provider);
-  window.w3 = web3;
-
-  var weiValue = web3.utils.toWei("0.00001", "ether"); // 1 ether
-  /* console.log(weiValue); //1000000000000000000 */
-  var wuigas = web3.utils.toWei("2", "gwei");
-
-  const transactionParameters = {
-    nonce: "0x00", // ignored by MetaMask
-    gasPrice: wuigas, // customizable by user during MetaMask confirmation.
-    gas: "21000", // customizable by user during MetaMask confirmation.
-    to: "0xddD5f93d84eF9E8A91e2dC3C37d8FFd33E1061e9", // Required except during contract publications.
-    from: String(account), // must match user's active address.
-    value: String(weiValue), // Only required to send ether to the recipient from the initiating external account.
-    data: "0x7f7465737432000000000000000000000000000000000000000000000000000000600057", // Optional, but used for defining smart contract creation and interaction.
-    chainId: "0x3", // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
-  };
-
-  // txHash is a hex string
-  // As with any RPC call, it may throw an error
-
-  const txHash = await ethereum.request({
-    method: "eth_sendTransaction",
-    params: [transactionParameters],
-  });
-
-  var re = /[0-9A-Fa-f]{6}/g;
-  if (re.test(txHash)) {
-    //check if output is hex
-    /*  postR(transactionData); */
-    console.log("im posting R");
-    postR(transactionData);
-    console.log("valid");
-  } else {
-    console.log("invalid");
-  }
-
-  console.log(txHash);
-}
-
-/* 
-var SendTransaction = async () => {
-  
-  console.log("buy clicked");
-  console.log(String(account));
-  const web3 = new Web3(provider);
-  window.w3 = web3;
-
-  var weiValue = web3.utils.toWei("0.00001", "ether"); // 1 ether
-  
-  var wuigas = web3.utils.toWei("2", "gwei");
-
-  const transactionParameters = {
-    nonce: "0x00", // ignored by MetaMask
-    gasPrice: wuigas, // customizable by user during MetaMask confirmation.
-    gas: "21000", // customizable by user during MetaMask confirmation.
-    to: "0xddD5f93d84eF9E8A91e2dC3C37d8FFd33E1061e9", // Required except during contract publications.
-    from: String(account), // must match user's active address.
-    value: String(weiValue), // Only required to send ether to the recipient from the initiating external account.
-    data: "0x7f7465737432000000000000000000000000000000000000000000000000000000600057", // Optional, but used for defining smart contract creation and interaction.
-    chainId: "0x3", // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
-  };
-
-  // txHash is a hex string
-  // As with any RPC call, it may throw an error
-
-  const txHash = await ethereum.request({
-    method: "eth_sendTransaction",
-    params: [transactionParameters],
-  });
-  var re = /[0-9A-Fa-f]{6}/g;
-  if (re.test(txHash)) {
-    //check if output is hex
-    //  postR(transactionData); 
-
-    console.log("valid");
-  } else {
-    console.log("invalid");
-  }
-
-  console.log(txHash);
-}; */
-
-var sign = async (msg) => {
-  if (w3) {
-    return await w3.eth.personal.sign(msg, account);
-  } else {
-    return false;
-  }
-};
-
-var contract = async (abi, address) => {
-  if (w3) {
-    return new w3.eth.Contract(abi, address);
-  } else {
-    return false;
-  }
-};
-
-var disconnect = async () => {
-  // Close provider session
-  console.log("dissconect");
-  await provider.disconnect();
-  document.getElementById("Address").innerText = "address";
-  document.getElementById("walletbtn").innerHTML = btnContent;
-  document.getElementById("walletbtn").onclick = connectWC;
-
-  document.getElementById("non-ownerBtn").style.display = "flex";
-  document.getElementById("ownerBtn").style.display = "none";
-};
-
-var address = "0x4b4f8ca8fb3e66b5ddafcebfe86312cec486dae1";
-var abi = [
-  {
-    inputs: [],
-    name: "count",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "increment",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-];
-
-},{"axios":1}]},{},[37]);
+},{"./export-post.js":1}]},{},[38]);

@@ -72,6 +72,23 @@ async function connectWC() {
   await fetchBlockchain();
   await provider.enable();
 
+  
+/* 
+  var options = {
+    host: "http://localhost:3000",
+    
+    path: "http://localhost:3000",
+    headers: {
+      
+      "Content-Type": "application/json",
+    },
+  };
+  http.get(options, function (res) {
+    console.log(res);
+    res.pipe(process.stdout);
+  });
+  console.log("inside connect wc"); */
+
   //  Create Web3 instance
   const web3 = new Web3(provider);
   window.w3 = web3;
@@ -94,28 +111,38 @@ async function connectWC() {
 
 async function SendTransaction() {
   await fetchBlockchain();
-  console.log("transaction data:" + JSON.stringify(transactionData));
 
+  /*  console.log("transaction data:" + JSON.stringify(transactionData));
+   */
   /* let postR = await import('./pbft/sandbox.js'); */
-  const postR = (transactionData) => {
-    var data = signTransaction(transactionData);
+  const postR = async (transactionData) => {
+    console.log(
+      "transaction data inside postR" + JSON.stringify(transactionData)
+    );
+    var data = await signTransaction(transactionData);
+    console.log("data after signTransaction" + JSON.stringify(transactionData));
+
+    /* console.log("transaction data" + data); */
     var transaction = {
       data: {
         data,
       },
     };
     console.log(JSON.stringify(transaction));
-
+    var axios = require("axios");
     var config = {
       method: "post",
+      proxy: {
+        host: 'localhost',
+        port: 3000
+      },
       url: "http://localhost:3000/transact",
       headers: {
         "Content-Type": "application/json",
       },
       data: transaction,
     };
-
-    axios(config)
+     axios(config)
       .then(function (response) {
         console.log("inside axios: " + JSON.stringify(response.data));
       })
@@ -124,60 +151,20 @@ async function SendTransaction() {
       });
   };
 
-  function signTransaction(obj) {
-    const SHA256 = require("crypto-js/sha256");
+  async function signTransaction(obj) {
+    /* const SHA256 = require("crypto-js/sha256");
 
-    const hash = SHA256(JSON.stringify(obj)).toString();
+    const hash = SHA256(JSON.stringify(obj)).toString(); */
 
-    var signature = "25699354f2a9aa253ab414a12afab818c64ade28567cb1721b04bc16b441960ca1b397a62432b64d4cb5862e2857562b0c9a4fe2280df0683349f6a4c61897abc7bff4dfdd453aecfec332341c9da486b731390885fea3b9df8e8ba33ce5aae3bfeecfd9acfd1a17e140b58bec65dd7618b55d0b2c4f3503050060583fa694c87a9bbb7e0eb940e14b0a2856df9e76ee8052bcd77873253a1529ed049f5101bd34e80b8f7f4601ed1fb735639948bfc1068481677d3957b68f9fc982e11f4944b6edcba90d629fe426dc814bbe66b52703e31dcc46ceb192d2454917aeb21fa7db902754a16f3f5e65f05748d0e52397bec4662d7c2e70e6028bc1166fc245f9";
-
-    obj = { ...obj, "employee signature": signature };
-    obj = { ...obj, "Transaction Hash": hash.toString() };
-    console.log(obj);
+    /* var signature = await generateSignature(hash); */
+    /* obj["employee signature"] = signature; */
+    /* obj["Transaction Hash"] = hash.toString(); */
+    /* obj = { ...obj, "employee signature": signature };
+    obj = { ...obj, "Transaction Hash": hash.toString() }; */
+    obj["previous owners"] = obj["owner"];
+    obj["owner"] = String(account);
 
     //function to generate a signature for a hash value using PRIVATE key
-    function generateSignature(hash) {
-      const crypto = require("crypto");
-      const fs = require("fs");
-      const Buffer = require('buffer').Buffer;
-
-      //read private key from file path
-
-      /*  const readline = require("readline");
-      function askQuestion(query) {
-        const rl = readline.createInterface({
-          input: process.stdin,
-          output: process.stdout,
-        });
-
-        return new Promise((resolve) =>
-          rl.question(query, (ans) => {
-            rl.close();
-            resolve(ans);
-          })
-        );
-      } */
-
-      /*  const inputReader = require("wait-console-input");
-      console.log("after wait-consol");
-      var privateKeyPath = inputReader.readLine(
-        "\nEnter file path for private key of employee: "
-      ); */
-      /* var privateKeyPath = await askQuestion(
-        "\nEnter file path for private key of employee: "
-      ); */
-
-      var privateKey = fs.readFileSync("AutoSign-privatekey.txt"); //store data from private key text file
-      //console.log(privateKey);
-
-      const h = Buffer.from(hash); //Convert hash string to buffer
-      const sign = crypto.sign("SHA256", h, privateKey); //Sign the data and returned signature in buffer
-      //console.log(sign);
-
-      //Convert returned buffer to base16
-      const signature = sign.toString("hex");
-      return signature;
-    }
 
     return obj;
   }
