@@ -427,7 +427,7 @@ h4 {
 }
 .buttons-container {
   position: absolute;
-  top: 85vh;
+  /* top: 20vh; */
 
   width: 100%;
   height: 50px;
@@ -489,7 +489,9 @@ h4 {
   font-weight: 500;
 }
 .owner {
+  
   display: none;
+  bottom: 120px;
 }
 .non-owner > .button-div {
   width: 70vw;
@@ -521,4 +523,14 @@ h4 {
 }
 .primary-btn{
   width: 100%;
+}
+
+.plan-info{
+  margin-top: 20px;
+  display: flex;
+  display: none;
+  
+}
+.plan-image{
+  margin-right: 15px;
 }

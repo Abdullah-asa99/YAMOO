@@ -9,164 +9,186 @@
         "sequenceNo": 0
     },
     {
-        "timestamp": 1653943995648,
+        "timestamp": 1654033710698,
         "lastHash": "genesis-hash",
-        "hash": "808faf9bacb1983ed4044d1b94c24b9bfbe96e127e4063aea331a7864c6cbf66",
+        "hash": "b96d0f18773d86507f4135cd3e50c9112400d87e2f866be410a47a6a8657bf87",
         "data": [
             {
-                "id": "b19a1fa0-e00c-11ec-aee6-4336dc5a9943",
+                "id": "58c65900-e12b-11ec-8992-fb06f4569ec3",
                 "from": "a47fc60f15b1e5195c8a03c2ef5d0173efd66bf38c1962f38ac79acb430354c3",
                 "input": {
                     "data": {
                         "data": {
-                            "temporary": "555888",
-                            "temporaryy": "555888sdf"
-                        }
-                    },
-                    "timestamp": 1653910566554
-                },
-                "hash": "6e82c2356c688fe664dd676da4d1c51f1921cecd8e771e24cd1e2d97f9618b86",
-                "signature": "CB23F40771CB49BAC36CE3F98D1E42E24FDA42A11B404E96842FBA69CE6CE8ECEFBF06F21DC63EC4B3751B3EBB346AB163080FF94018C4C5984BDE6BD8F1ED0D"
-            },
-            {
-                "id": "02185290-e01b-11ec-aee6-4336dc5a9943",
-                "from": "a47fc60f15b1e5195c8a03c2ef5d0173efd66bf38c1962f38ac79acb430354c3",
-                "input": {
-                    "data": {
-                        "data": {
-                            "temporary": "555888",
-                            "temporaryy": "555888sdf"
-                        }
-                    },
-                    "timestamp": 1653916714553
-                },
-                "hash": "a210af7e9dc24ca09b5edfaf381f685bb61fa2e45d7247d80badef0ccb9201fc",
-                "signature": "6932E3B252A56DD27369C4990A162F76684C381D02A96C5854DA65501F20F68C4D73BC7869BC42E016B2D9509F690E95D7354C29923DF8942CC8A4EEAD2D9605"
-            },
-            {
-                "id": "86dfdfe0-e05a-11ec-aee6-4336dc5a9943",
-                "from": "a47fc60f15b1e5195c8a03c2ef5d0173efd66bf38c1962f38ac79acb430354c3",
-                "input": {
-                    "data": {
-                        "data": {
-                            "ID": "25",
+                            "ID": "20",
                             "artist name": "Mohammed Akrouf",
                             "artist ID": "1",
-                            "product name": "the joker",
-                            "price": 4500,
-                            "size": "100 x 80 cm^2",
-                            "Media": "Acrylic on canvas",
-                            "Idea behined the work": "Insipiration from looking at artwork online",
+                            "product name": "The Joker ( Joaquin Phoenix ",
+                            "price": 1150,
+                            "size": "50x50 cm^2",
+                            "Media": "Oil on canvas",
+                            "Idea behined the work": "Inspired from a movie ",
                             "owner": "0x2635927cfBD34c54F9F5a80dEaaEf2Fad9161Fa5",
                             "previous owners": "",
                             "employee name": "Saad",
-                            "employee signature": "8609510e60f8ded7a7fbacaedef2adf3dbb325b86e937a4f01a736f9e3b13d992531186547497f2272db621797d11355ae4964c4e49280d3cb4b3a09d4c6360768dbbcefa29c5f9648e9212bb3f190b5930c5149d284865ca425e860de6ddfd44281b3517dee95b3fd773732148812c456c28608db9ff37e52f5b2b690a962bcfcb8174832bb8f538e8fea61496953e4f1a18e3e283792c41674ff7240e02ba3131be6098dc2d5bd3138ceeed718e9c8d8eed23cb450c662edfca772fbdf15a6d6fd8dc006a134d2c7fd5f1859ef9538bde348155fe859a206d499a0bbc17131d85ab2be22636865198a3456a24d7e09071e74698bee0bd2232ddbaa5f91935a",
-                            "Transaction Hash": "3b7be875fff683bee44d8533188198151e78652e1e572a559327804df7848845"
+                            "employee signature": "7f0ae3eb92bd84fa7ef88bfe494c3797c826a112b6c3f843fc0338dfc36df7b44415fe5b40fab496775dead23dded1e9e733b33e76a2e14d03a08993b1edbcab6a19f26e21e16900ba02cf7bd251b26b50149c6145bf306a4187cd8077532cbfd10580db23d74229647a94254b02041783fef5a5e31adb78d311e32a2f5dcae6c949db37f79cebbbb378fd9edb090bba20b49f23649ae01154ba40291df7553feee35de69eb78930a11e21e8d7db3311d15fcf76fda1e96ecd14a9fa2335855bf7bc6077fab8df988110877a00f6a658c2233677165c7b8a5374c9b692a9503c2d6cb30fcd4e58811eb7449be0b3428aca0d7a4e9a5eff0c16b06711cc00db72",
+                            "Transaction Hash": "652d32bc5d29f51a147e95c18967cd83873c5e745a01d0c3a0069d0732a13981"
                         }
                     },
-                    "timestamp": 1653943995614
+                    "timestamp": 1654033683088
                 },
-                "hash": "d2f04e8945b6fe1e11ef00a2be8a02697f72eec3c1fceeb4fc81f5083335f27f",
-                "signature": "4A34AB1746116F7A98AFE58494ED5844541CAE692870A352DE7C4D934A13041DC55111A9C00A9634DEEFD278E0716135B5CB752EB41D20285D2EC2EE7C254E05"
+                "hash": "0c17fc8f21bb7a42af2f066aaa8069030d9820fd47667c25bcfd231df321b12c",
+                "signature": "0DF42FADED57F33FAAE3C295B6BB553ED14AFDC9BC89D6C0D95E1A73B89E156EB873ED7C1DF5E6C0E2BF1A87A20B935703C37F321519DE6C3B893CBA4AADCA05"
+            },
+            {
+                "id": "60720050-e12b-11ec-8992-fb06f4569ec3",
+                "from": "a47fc60f15b1e5195c8a03c2ef5d0173efd66bf38c1962f38ac79acb430354c3",
+                "input": {
+                    "data": {
+                        "data": {
+                            "ID": "30",
+                            "artist name": "Leonardo da Vinci",
+                            "artist ID": "2",
+                            "product name": "Mona Lisa",
+                            "price": 900000000,
+                            "size": "77x53 cm^2",
+                            "Media": "Oil on poplar panel",
+                            "Idea behined the work": "The painting is probably of the Italian noblewoman Lisa Gherardini",
+                            "owner": "0x2635927cfBD34c54F9F5a80dEaaEf2Fad9161Fa5",
+                            "previous owners": "",
+                            "employee name": "Saad",
+                            "employee signature": "1d8c6473cdc11cec6434d37732bd354f0bd9090f231c033ee9762423abcf30438d2c90826b9e2d04f803d9ab66db7c831e62c5d8f351a6ba1daba65f56637c5a4b25cd00f46b7860b87fa0ae7f177a4e3cb80214ec83e0184455b52eb5c2b4719e2ea1c97b39d80720cce33f87ed7ae972be3b789869cd4d5c16e9c784151d4f0815f1fc69df4382a4331f7093e403b9697e9f6a7d7583818b4c0bdffb1b1927be55388c9066359d3913e89d4fbc70688f2c722137f859637597f413974c12ce39e5878efdd17a1b8a2714bb351fc5c3907546408d2fde5dcb42e60fa8db4564a4d45ad9be69d20d60b2be0444fd6df523c6edb8121d88f864c7be57f1ab4a0a",
+                            "Transaction Hash": "9dd5612a3a7171b17366a95ac4d1bbe4f3b7f0e8dc96cc16802933645ee66d4a"
+                        }
+                    },
+                    "timestamp": 1654033695958
+                },
+                "hash": "9d5a3832c08470e44dec89b14465714cd0969de881f98378e68d92e49693b13b",
+                "signature": "E38F3B3610F4F7BA0FED313F2B4B1F777E166002779C7349A2D141389758DDA7674382DB749AFF0878F69E9F89251C2C1AB4F0A4941380D5BED394ADC4C2A509"
+            },
+            {
+                "id": "6937a320-e12b-11ec-8992-fb06f4569ec3",
+                "from": "a47fc60f15b1e5195c8a03c2ef5d0173efd66bf38c1962f38ac79acb430354c3",
+                "input": {
+                    "data": {
+                        "data": {
+                            "ID": "30",
+                            "artist name": "Leonardo da Vinci",
+                            "artist ID": "2",
+                            "product name": "Mona Lisa",
+                            "price": 900000000,
+                            "size": "77x53 cm^2",
+                            "Media": "Oil on poplar panel",
+                            "Idea behined the work": "The painting is probably of the Italian noblewoman Lisa Gherardini",
+                            "owner": "0x2635927cfBD34c54F9F5a80dEaaEf2Fad9161Fa5",
+                            "previous owners": "",
+                            "employee name": "Saad",
+                            "employee signature": "1d8c6473cdc11cec6434d37732bd354f0bd9090f231c033ee9762423abcf30438d2c90826b9e2d04f803d9ab66db7c831e62c5d8f351a6ba1daba65f56637c5a4b25cd00f46b7860b87fa0ae7f177a4e3cb80214ec83e0184455b52eb5c2b4719e2ea1c97b39d80720cce33f87ed7ae972be3b789869cd4d5c16e9c784151d4f0815f1fc69df4382a4331f7093e403b9697e9f6a7d7583818b4c0bdffb1b1927be55388c9066359d3913e89d4fbc70688f2c722137f859637597f413974c12ce39e5878efdd17a1b8a2714bb351fc5c3907546408d2fde5dcb42e60fa8db4564a4d45ad9be69d20d60b2be0444fd6df523c6edb8121d88f864c7be57f1ab4a0a",
+                            "Transaction Hash": "9dd5612a3a7171b17366a95ac4d1bbe4f3b7f0e8dc96cc16802933645ee66d4a"
+                        }
+                    },
+                    "timestamp": 1654033710674
+                },
+                "hash": "337fc9b2b02d8fbbf2183d3231ef307a7c9526b4f630a235b92012be1cea93bd",
+                "signature": "53E5AC3054150BF1EF702338D06E26B08F9B91A1C96C9CC4C6AEF77B08688FF9EB942CC818D334B7990AD9F77F123FC263C6B2351C8377553C0743EE1BEE0201"
             }
         ],
         "proposer": "5864f1e7d7e37e95882b398c21ca29b314ebfc6ea1286c8dc1201214cc0d0686",
-        "signature": "937A26615C0060FE8956930BD049E15718AEFD930E5362DB7132152EEDD440CB9F07140E770C8CE102B731B7C8A22713F470CE6BEDFB25F63522541DFFA3EB0A",
+        "signature": "44D1EE6959AD445F42A49B321D6587B69B7F517EA595097CF73AE25FD5A7151754725FF897767CAE0DE1A58D29047A6EE0D10721B5F4F06541315D3C796E4005",
         "sequenceNo": 1,
         "prepareMessages": [
             {
-                "blockHash": "808faf9bacb1983ed4044d1b94c24b9bfbe96e127e4063aea331a7864c6cbf66",
+                "blockHash": "b96d0f18773d86507f4135cd3e50c9112400d87e2f866be410a47a6a8657bf87",
                 "publicKey": "a47fc60f15b1e5195c8a03c2ef5d0173efd66bf38c1962f38ac79acb430354c3",
-                "signature": "3845E8DB13B17012749A2EED06FE9C33B4091C17F443079FC4AD9F197CB287B2A923DF59A65DB7C5C785AFEE8B1336B9C5296322CEA66F4E8619B5C1D4BF9006"
+                "signature": "95B74D763CBCC3D8C229B16585D4FA8B2A7CA40AF5A6D8DE502095B39DFF2A29E6050F411A557B74A90BBDAADCE729CF7DE8326914C835DADA338A40BCC1A108"
             },
             {
-                "blockHash": "808faf9bacb1983ed4044d1b94c24b9bfbe96e127e4063aea331a7864c6cbf66",
+                "blockHash": "b96d0f18773d86507f4135cd3e50c9112400d87e2f866be410a47a6a8657bf87",
                 "publicKey": "276ab32fb62ccc18fcb9c0e792092b9b6911e53b75f951211b232cf84de061bf",
-                "signature": "24612842FB55F3CDA3D0BA34AC91B7103D223476503AD2F725F30AB70A28D5514557FFA7DD23FE4C163FF4F45325B3758BDDC287700BF4FD6C464824D3EC8404"
+                "signature": "3CF08C5C98AEDEEAA1B355640A420AE0189E5E428104C8B88394235AAFCFD9BDCD84010FD59B7EB81A9425CCC9CB6AC236CC688DE4213204518D00BFCF4BE00A"
             },
             {
-                "blockHash": "808faf9bacb1983ed4044d1b94c24b9bfbe96e127e4063aea331a7864c6cbf66",
+                "blockHash": "b96d0f18773d86507f4135cd3e50c9112400d87e2f866be410a47a6a8657bf87",
                 "publicKey": "5864f1e7d7e37e95882b398c21ca29b314ebfc6ea1286c8dc1201214cc0d0686",
-                "signature": "937A26615C0060FE8956930BD049E15718AEFD930E5362DB7132152EEDD440CB9F07140E770C8CE102B731B7C8A22713F470CE6BEDFB25F63522541DFFA3EB0A"
+                "signature": "44D1EE6959AD445F42A49B321D6587B69B7F517EA595097CF73AE25FD5A7151754725FF897767CAE0DE1A58D29047A6EE0D10721B5F4F06541315D3C796E4005"
             }
         ],
         "commitMessages": [
             {
-                "blockHash": "808faf9bacb1983ed4044d1b94c24b9bfbe96e127e4063aea331a7864c6cbf66",
+                "blockHash": "b96d0f18773d86507f4135cd3e50c9112400d87e2f866be410a47a6a8657bf87",
                 "publicKey": "a47fc60f15b1e5195c8a03c2ef5d0173efd66bf38c1962f38ac79acb430354c3",
-                "signature": "3845E8DB13B17012749A2EED06FE9C33B4091C17F443079FC4AD9F197CB287B2A923DF59A65DB7C5C785AFEE8B1336B9C5296322CEA66F4E8619B5C1D4BF9006"
+                "signature": "95B74D763CBCC3D8C229B16585D4FA8B2A7CA40AF5A6D8DE502095B39DFF2A29E6050F411A557B74A90BBDAADCE729CF7DE8326914C835DADA338A40BCC1A108"
             },
             {
-                "blockHash": "808faf9bacb1983ed4044d1b94c24b9bfbe96e127e4063aea331a7864c6cbf66",
+                "blockHash": "b96d0f18773d86507f4135cd3e50c9112400d87e2f866be410a47a6a8657bf87",
                 "publicKey": "276ab32fb62ccc18fcb9c0e792092b9b6911e53b75f951211b232cf84de061bf",
-                "signature": "24612842FB55F3CDA3D0BA34AC91B7103D223476503AD2F725F30AB70A28D5514557FFA7DD23FE4C163FF4F45325B3758BDDC287700BF4FD6C464824D3EC8404"
+                "signature": "3CF08C5C98AEDEEAA1B355640A420AE0189E5E428104C8B88394235AAFCFD9BDCD84010FD59B7EB81A9425CCC9CB6AC236CC688DE4213204518D00BFCF4BE00A"
             },
             {
-                "blockHash": "808faf9bacb1983ed4044d1b94c24b9bfbe96e127e4063aea331a7864c6cbf66",
+                "blockHash": "b96d0f18773d86507f4135cd3e50c9112400d87e2f866be410a47a6a8657bf87",
                 "publicKey": "5864f1e7d7e37e95882b398c21ca29b314ebfc6ea1286c8dc1201214cc0d0686",
-                "signature": "937A26615C0060FE8956930BD049E15718AEFD930E5362DB7132152EEDD440CB9F07140E770C8CE102B731B7C8A22713F470CE6BEDFB25F63522541DFFA3EB0A"
+                "signature": "44D1EE6959AD445F42A49B321D6587B69B7F517EA595097CF73AE25FD5A7151754725FF897767CAE0DE1A58D29047A6EE0D10721B5F4F06541315D3C796E4005"
             }
         ]
     },
     {
-        "timestamp": 1653944427562,
-        "lastHash": "808faf9bacb1983ed4044d1b94c24b9bfbe96e127e4063aea331a7864c6cbf66",
-        "hash": "f06687b4ea4684066a624d77d072e8781d23991963d6a3ce3ccdbc8c2fbf719a",
+        "timestamp": 1654033802833,
+        "lastHash": "b96d0f18773d86507f4135cd3e50c9112400d87e2f866be410a47a6a8657bf87",
+        "hash": "68c663e5e22fbdb75c12001bcef8e415194a1270bc5d64f715691da701ba6168",
         "data": [
             {
-                "id": "6beaabb0-e05b-11ec-aee6-4336dc5a9943",
+                "id": "833dee00-e12b-11ec-8992-fb06f4569ec3",
                 "from": "a47fc60f15b1e5195c8a03c2ef5d0173efd66bf38c1962f38ac79acb430354c3",
                 "input": {
                     "data": {
                         "data": {
-                            "ID": "25",
-                            "artist name": "Mohammed Akrouf",
-                            "artist ID": "1",
-                            "product name": "the joker",
-                            "price": 4500,
-                            "size": "100 x 80 cm^2",
-                            "Media": "Acrylic on canvas",
-                            "Idea behined the work": "Insipiration from looking at artwork online",
+                            "ID": "30",
+                            "artist name": "Leonardo da Vinci",
+                            "artist ID": "2",
+                            "product name": "Mona Lisa",
+                            "price": 900000000,
+                            "size": "77x53 cm^2",
+                            "Media": "Oil on poplar panel",
+                            "Idea behined the work": "The painting is probably of the Italian noblewoman Lisa Gherardini",
                             "owner": "0x2635927cfBD34c54F9F5a80dEaaEf2Fad9161Fa5",
                             "previous owners": "",
                             "employee name": "Saad",
-                            "employee signature": "8609510e60f8ded7a7fbacaedef2adf3dbb325b86e937a4f01a736f9e3b13d992531186547497f2272db621797d11355ae4964c4e49280d3cb4b3a09d4c6360768dbbcefa29c5f9648e9212bb3f190b5930c5149d284865ca425e860de6ddfd44281b3517dee95b3fd773732148812c456c28608db9ff37e52f5b2b690a962bcfcb8174832bb8f538e8fea61496953e4f1a18e3e283792c41674ff7240e02ba3131be6098dc2d5bd3138ceeed718e9c8d8eed23cb450c662edfca772fbdf15a6d6fd8dc006a134d2c7fd5f1859ef9538bde348155fe859a206d499a0bbc17131d85ab2be22636865198a3456a24d7e09071e74698bee0bd2232ddbaa5f91935a",
-                            "Transaction Hash": "3b7be875fff683bee44d8533188198151e78652e1e572a559327804df7848845"
+                            "employee signature": "1d8c6473cdc11cec6434d37732bd354f0bd9090f231c033ee9762423abcf30438d2c90826b9e2d04f803d9ab66db7c831e62c5d8f351a6ba1daba65f56637c5a4b25cd00f46b7860b87fa0ae7f177a4e3cb80214ec83e0184455b52eb5c2b4719e2ea1c97b39d80720cce33f87ed7ae972be3b789869cd4d5c16e9c784151d4f0815f1fc69df4382a4331f7093e403b9697e9f6a7d7583818b4c0bdffb1b1927be55388c9066359d3913e89d4fbc70688f2c722137f859637597f413974c12ce39e5878efdd17a1b8a2714bb351fc5c3907546408d2fde5dcb42e60fa8db4564a4d45ad9be69d20d60b2be0444fd6df523c6edb8121d88f864c7be57f1ab4a0a",
+                            "Transaction Hash": "9dd5612a3a7171b17366a95ac4d1bbe4f3b7f0e8dc96cc16802933645ee66d4a"
                         }
                     },
-                    "timestamp": 1653944379883
+                    "timestamp": 1654033754336
                 },
-                "hash": "b6c051f8790c21d9b37b1a4ec3c81d6569d63440744c7e33306d67a91bf01aa5",
-                "signature": "FBB34D5CB83A2A2338A0FD2BAD30B651155F8177F86FEBF4A57EFB8949039C58C15E97B6830E87732D7E136F37A911E83495DAA8A478DC332E00128ED3A14C06"
+                "hash": "66414893d61349050cedd0abb294b621e490e9beac721ac1c8eafccb4ffa2cd8",
+                "signature": "3748684BFC6BADEFA1DE96231314E1F2C99C59827453A3C5F56EE264A77DA483A69394081C660392ECC8096302B5A48E33A5B77261C692FB44760A4D64F0D60A"
             },
             {
-                "id": "7df5a8a0-e05b-11ec-aee6-4336dc5a9943",
+                "id": "8bdaac10-e12b-11ec-8992-fb06f4569ec3",
                 "from": "a47fc60f15b1e5195c8a03c2ef5d0173efd66bf38c1962f38ac79acb430354c3",
                 "input": {
                     "data": {
                         "data": {
-                            "ID": "25",
-                            "artist name": "Mohammed Akrouf",
-                            "artist ID": "1",
-                            "product name": "the joker",
-                            "price": 4500,
-                            "size": "100 x 80 cm^2",
-                            "Media": "Acrylic on canvas",
-                            "Idea behined the work": "Insipiration from looking at artwork online",
+                            "ID": "35",
+                            "artist name": "Leonardo da Vinci",
+                            "artist ID": "2",
+                            "product name": "Mona Lisa",
+                            "price": 900000000,
+                            "size": "77x53 cm^2",
+                            "Media": "Oil on poplar panel",
+                            "Idea behined the work": "The painting is probably of the Italian noblewoman Lisa Gherardini",
                             "owner": "0x2635927cfBD34c54F9F5a80dEaaEf2Fad9161Fa5",
                             "previous owners": "",
                             "employee name": "Saad",
-                            "employee signature": "8609510e60f8ded7a7fbacaedef2adf3dbb325b86e937a4f01a736f9e3b13d992531186547497f2272db621797d11355ae4964c4e49280d3cb4b3a09d4c6360768dbbcefa29c5f9648e9212bb3f190b5930c5149d284865ca425e860de6ddfd44281b3517dee95b3fd773732148812c456c28608db9ff37e52f5b2b690a962bcfcb8174832bb8f538e8fea61496953e4f1a18e3e283792c41674ff7240e02ba3131be6098dc2d5bd3138ceeed718e9c8d8eed23cb450c662edfca772fbdf15a6d6fd8dc006a134d2c7fd5f1859ef9538bde348155fe859a206d499a0bbc17131d85ab2be22636865198a3456a24d7e09071e74698bee0bd2232ddbaa5f91935a",
-                            "Transaction Hash": "3b7be875fff683bee44d8533188198151e78652e1e572a559327804df7848845"
+                            "employee signature": "55ea7165112c581131f623ed7fdc45ad40593e5b27aa5dec146b3d60c053cf9f7301211db12832d801477427ad2aa8167e964b3253e661dc3d67d101e210ac7dd545b2de7957d4056a208f0b84d7dbfa8de40884339e8c2d90129f16e0056c0aa7f22def53b498e2e9677a6077415c251422a00738e31526622da225af2884793ba4addbf87ef820a56611c9e26975208353e72b6aa3d8e7ae0c0904b59f1fe5363550b03aeb47b6ce090f2a4c4872a4c079f7174050fe46eb9ae6af2e163ccbfa6669c33d3c0fc64d13d5d13be9c0fe981f7e52588197eabd89852494d132be79cbc25e960c5bc8c50e9a592592ad4ed5a841c0ace5c06b1002688df6adde3e",
+                            "Transaction Hash": "fcc51f23034be2cdd5485937082c2956697ce9f30780dbf5dc326148810f8c16"
                         }
                     },
-                    "timestamp": 1653944410154
+                    "timestamp": 1654033768785
                 },
-                "hash": "b2b0d72af022cd06d7facfe6617101268f20a621528b4ae86f1e4b9d182b3b32",
-                "signature": "3FB2538B310B567B412D3E2547373C3CDF7D942A8B99B0F4E2E1B71AAD255AD88F5F0A0FB80F23CD9639038F511CC68463B6F54DA116E4DB1659FD74A7E5C60F"
+                "hash": "762e27da2f5b86d8d150378de9d7b04f796e1a423178902a3bb6047f186c218f",
+                "signature": "98DE384BAD3318F9F8B373314C70458DD116836789149DBE325BCC841EC2B0BAC709B82241A8D664EC415EFDA9B07859EB867A169838E9D175A4A9CF898C7A08"
             },
             {
-                "id": "88548910-e05b-11ec-aee6-4336dc5a9943",
+                "id": "a024c390-e12b-11ec-8992-fb06f4569ec3",
                 "from": "a47fc60f15b1e5195c8a03c2ef5d0173efd66bf38c1962f38ac79acb430354c3",
                 "input": {
                     "data": {
@@ -176,57 +198,57 @@
                             "artist ID": "1",
                             "product name": "the joker",
                             "price": 4500,
-                            "size": "100 x 80 cm^2",
+                            "size": "100 x 80 cm2",
                             "Media": "Acrylic on canvas",
                             "Idea behined the work": "Insipiration from looking at artwork online",
-                            "owner": "0x2635927cfBD34c54F9F5a80dEaaEf2Fad9161Fa5",
-                            "previous owners": "",
+                            "owner": "0xddD5f93d84eF9E8A91e2dC3C37d8FFd33E1061e9",
+                            "previous owners": "0x2635927cfBD34c54F9F5a80dEaaEf2Fad9161Fa5",
                             "employee name": "Saad",
-                            "employee signature": "8609510e60f8ded7a7fbacaedef2adf3dbb325b86e937a4f01a736f9e3b13d992531186547497f2272db621797d11355ae4964c4e49280d3cb4b3a09d4c6360768dbbcefa29c5f9648e9212bb3f190b5930c5149d284865ca425e860de6ddfd44281b3517dee95b3fd773732148812c456c28608db9ff37e52f5b2b690a962bcfcb8174832bb8f538e8fea61496953e4f1a18e3e283792c41674ff7240e02ba3131be6098dc2d5bd3138ceeed718e9c8d8eed23cb450c662edfca772fbdf15a6d6fd8dc006a134d2c7fd5f1859ef9538bde348155fe859a206d499a0bbc17131d85ab2be22636865198a3456a24d7e09071e74698bee0bd2232ddbaa5f91935a",
-                            "Transaction Hash": "3b7be875fff683bee44d8533188198151e78652e1e572a559327804df7848845"
+                            "employee signature": "023fc9bf102dcaf836d4133f2b842a8034f4b5aaac03aee797e2e59dd244dd302285960d7c5363bf91f48afce3621bce6938ff27af3bed7dff5fe31beeea8fcf2c82fb31a84ea6caedec3131f96d10584ddae1ab8ed6c3bd6672206a99d97e68de4d8fda281ef02146d6e7387b22bf5f0fe4a805ad23f89f23b9c128ca6927e899ccdde399f6b82e277b699e143896249b32881da81e9ac2bb64372cf2f85e938ed839a04c5f4296d2143c4f9678bac2cf1d6d9d2b61864699134c20f7b6fe6fb581c6eea1e5aa5048b143ee3c9460441f2ab2f887fda7f0aa7058823b1da2b5a20032a1ae41497e53977cd927a2ccfadf5750996d44360f1ad63bd867ed9cee",
+                            "Transaction Hash": "eb6835ff9d4dbdac84ec0270a73ab9c02a96b0c27386eb094ce8fa51f8fa791c"
                         }
                     },
-                    "timestamp": 1653944427553
+                    "timestamp": 1654033802825
                 },
-                "hash": "363bde0b0a95ed3f4fd7706b99aeaa5725e19f4f1fe96c555f7590358facd1d4",
-                "signature": "3E5023EB9C87A525F9BAC34C9523B93A8F938F02CBA8A671653D718E3E7986D5E7604883746848B991AC69AA9B19DE83D9D77D3BCA1BAB2EAB23E63D1DAB5602"
+                "hash": "0d01c3dc7cd75556b2dde54ef38247b5c5ca93d0856487a6b7df590e802322bc",
+                "signature": "C32658AA5132EC8BD7ABF73E1AE233208016260C762B3AE7207C4B4C9D1A8D3887B4E13889FE5BCF6BD192155754D3BED8814711A993874F6616B0577CC52705"
             }
         ],
         "proposer": "276ab32fb62ccc18fcb9c0e792092b9b6911e53b75f951211b232cf84de061bf",
-        "signature": "F4114DDB8BA24339DC510D96C4319A84C0F1EF4F007C9783CEA0DF25014D7921DA923887F411F505410835ADB93FAD92E5524EAEFA9A3FB70A88636C92ABCC09",
+        "signature": "CAA901FAADD2D0A0926850E4D3C623EF054E53978F502FEFB845526C55CAFD56F0D36A8A520F6DF5A335661E96D2E2339F4687B55EA35B3AD42537EE5E8F5C00",
         "sequenceNo": 2,
         "prepareMessages": [
             {
-                "blockHash": "f06687b4ea4684066a624d77d072e8781d23991963d6a3ce3ccdbc8c2fbf719a",
+                "blockHash": "68c663e5e22fbdb75c12001bcef8e415194a1270bc5d64f715691da701ba6168",
                 "publicKey": "a47fc60f15b1e5195c8a03c2ef5d0173efd66bf38c1962f38ac79acb430354c3",
-                "signature": "AC1142312B16B91A77A30A92AE56B8593269009A28595C5B979DF625831969ADCB55C5F63C48E62B1E9330CD0EA5AE981AFCABB95548933B2FE882FE8EA39405"
+                "signature": "BF50FE8E8957EC34F9B23288204C87E7A423D786EFF0750AFDCE004A3880FC63B31EDCE5A72B27323F7973100D95DA43480593BD507DC0971EA3AE22EF92DF04"
             },
             {
-                "blockHash": "f06687b4ea4684066a624d77d072e8781d23991963d6a3ce3ccdbc8c2fbf719a",
+                "blockHash": "68c663e5e22fbdb75c12001bcef8e415194a1270bc5d64f715691da701ba6168",
                 "publicKey": "5864f1e7d7e37e95882b398c21ca29b314ebfc6ea1286c8dc1201214cc0d0686",
-                "signature": "56811CD49A9052572BF0503A75CDB0475E5420ABC76E2E2A32302E3B1306E194FC51921D688E4C754E8307A0F1220A197F8C1FAA49DBF3712FB5CA64B5682A00"
+                "signature": "FE86DB8E78DCE42403505DFE31A86CA17CF3A1999615D11FF5C51894A491682D22B58223938D3C001D3B6E19790F7D6F48A8AF491707F48116A0DEDF516CC20E"
             },
             {
-                "blockHash": "f06687b4ea4684066a624d77d072e8781d23991963d6a3ce3ccdbc8c2fbf719a",
+                "blockHash": "68c663e5e22fbdb75c12001bcef8e415194a1270bc5d64f715691da701ba6168",
                 "publicKey": "276ab32fb62ccc18fcb9c0e792092b9b6911e53b75f951211b232cf84de061bf",
-                "signature": "F4114DDB8BA24339DC510D96C4319A84C0F1EF4F007C9783CEA0DF25014D7921DA923887F411F505410835ADB93FAD92E5524EAEFA9A3FB70A88636C92ABCC09"
+                "signature": "CAA901FAADD2D0A0926850E4D3C623EF054E53978F502FEFB845526C55CAFD56F0D36A8A520F6DF5A335661E96D2E2339F4687B55EA35B3AD42537EE5E8F5C00"
             }
         ],
         "commitMessages": [
             {
-                "blockHash": "f06687b4ea4684066a624d77d072e8781d23991963d6a3ce3ccdbc8c2fbf719a",
+                "blockHash": "68c663e5e22fbdb75c12001bcef8e415194a1270bc5d64f715691da701ba6168",
                 "publicKey": "a47fc60f15b1e5195c8a03c2ef5d0173efd66bf38c1962f38ac79acb430354c3",
-                "signature": "AC1142312B16B91A77A30A92AE56B8593269009A28595C5B979DF625831969ADCB55C5F63C48E62B1E9330CD0EA5AE981AFCABB95548933B2FE882FE8EA39405"
+                "signature": "BF50FE8E8957EC34F9B23288204C87E7A423D786EFF0750AFDCE004A3880FC63B31EDCE5A72B27323F7973100D95DA43480593BD507DC0971EA3AE22EF92DF04"
             },
             {
-                "blockHash": "f06687b4ea4684066a624d77d072e8781d23991963d6a3ce3ccdbc8c2fbf719a",
+                "blockHash": "68c663e5e22fbdb75c12001bcef8e415194a1270bc5d64f715691da701ba6168",
                 "publicKey": "5864f1e7d7e37e95882b398c21ca29b314ebfc6ea1286c8dc1201214cc0d0686",
-                "signature": "56811CD49A9052572BF0503A75CDB0475E5420ABC76E2E2A32302E3B1306E194FC51921D688E4C754E8307A0F1220A197F8C1FAA49DBF3712FB5CA64B5682A00"
+                "signature": "FE86DB8E78DCE42403505DFE31A86CA17CF3A1999615D11FF5C51894A491682D22B58223938D3C001D3B6E19790F7D6F48A8AF491707F48116A0DEDF516CC20E"
             },
             {
-                "blockHash": "f06687b4ea4684066a624d77d072e8781d23991963d6a3ce3ccdbc8c2fbf719a",
+                "blockHash": "68c663e5e22fbdb75c12001bcef8e415194a1270bc5d64f715691da701ba6168",
                 "publicKey": "276ab32fb62ccc18fcb9c0e792092b9b6911e53b75f951211b232cf84de061bf",
-                "signature": "F4114DDB8BA24339DC510D96C4319A84C0F1EF4F007C9783CEA0DF25014D7921DA923887F411F505410835ADB93FAD92E5524EAEFA9A3FB70A88636C92ABCC09"
+                "signature": "CAA901FAADD2D0A0926850E4D3C623EF054E53978F502FEFB845526C55CAFD56F0D36A8A520F6DF5A335661E96D2E2339F4687B55EA35B3AD42537EE5E8F5C00"
             }
         ]
     }

@@ -129,7 +129,7 @@ a {
 .summary-plan .plan-info {
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  /* column-gap: 20px; */
   text-align: start;
   margin-bottom: 10px;
 }

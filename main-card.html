@@ -125,7 +125,6 @@
                 justify-content: center;
                 flex-direction: column;
                 align-items: center;
-                
               "
             >
               <img src="assets/images/succpaymentG.png" style="width: 180px" />
@@ -175,7 +174,7 @@
               class="data"
             >
               <div class="content">
-                <div class="blueeee">
+                <div id="bluecard" class="blueeee">
                   <h1 class="product-name" id="prodname">product name</h1>
                   <ul>
                     <li>
@@ -199,7 +198,7 @@
                   </ul>
                 </div>
                 <div class="whiteee">
-                  <div class="swipe-indicator"></div>
+                  <div id="swiper" class="swipe-indicator"></div>
                   <ul>
                     <li>
                       <h2 class="authenticity" id="authentic">
@@ -215,6 +214,7 @@
                       "
                     >
                       <img
+                        id="authenticIcon"
                         class="imgg"
                         style="width: 2rem"
                         src="./assets/images/checkbox-circle-fill.svg"
@@ -222,110 +222,99 @@
                       />
                     </li>
                   </ul>
-                  <ul
-                    class="nav nav-pills nav-pilled-tab"
-                    id="pills-tab"
-                    role="tablist"
-                  >
-                    <li class="nav-item" role="presentation">
-                      <button
-                        class="nav-link active"
-                        id="pills-Info-tab"
-                        data-bs-toggle="pill"
-                        data-bs-target="#pills-Info"
-                        type="button"
-                        role="tab"
-                        aria-controls="pills-Info"
-                        aria-selected="true"
-                      >
-                        Description
-                      </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button
-                        class="nav-link"
-                        id="pills-Owner-tab"
-                        data-bs-toggle="pill"
-                        data-bs-target="#pills-Owner"
-                        type="button"
-                        role="tab"
-                        aria-controls="pills-Owner"
-                        aria-selected="false"
-                      >
-                        History of owners
-                      </button>
-                    </li>
-                  </ul>
-                  <div
-                    class="tab-content content-custome-data"
-                    id="pills-tabContent"
-                  >
-                    <div
-                      class="tab-pane fade active show"
-                      id="pills-Info"
-                      role="tabpanel"
-                      aria-labelledby="pills-Info-tab"
+                  <div id="whitecontent">
+                    <ul
+                      class="nav nav-pills nav-pilled-tab"
+                      id="pills-tab"
+                      role="tablist"
                     >
-                      <div>
-                        <!-- <h5>Name:</h5>
-                      <p>For he's a jolly good fellow 2020</p> -->
-                        <h5>Price:</h5>
-                        <p id="itemPrice">100000$</p>
-                        <h5>Size:</h5>
-                        <p id="size"></p>
-                        <h5>Media:</h5>
-                        <p id="artMedia">oil and gold leaf on canvas</p>
-                        <h5>Ideas behind the work:</h5>
-                        <p id="idea"></p>
+                      <li class="nav-item" role="presentation">
+                        <button
+                          class="nav-link active"
+                          id="pills-Info-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#pills-Info"
+                          type="button"
+                          role="tab"
+                          aria-controls="pills-Info"
+                          aria-selected="true"
+                        >
+                          Description
+                        </button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button
+                          class="nav-link"
+                          id="pills-Owner-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#pills-Owner"
+                          type="button"
+                          role="tab"
+                          aria-controls="pills-Owner"
+                          aria-selected="false"
+                        >
+                          History of owners
+                        </button>
+                      </li>
+                    </ul>
+                    <div
+                      class="tab-content content-custome-data"
+                      id="pills-tabContent"
+                    >
+                      <div
+                        class="tab-pane fade active show"
+                        id="pills-Info"
+                        role="tabpanel"
+                        aria-labelledby="pills-Info-tab"
+                      >
+                        <div>
+                          <!-- <h5>Name:</h5>
+                        <p>For he's a jolly good fellow 2020</p> -->
+                          <h5>Price:</h5>
+                          <p id="itemPrice">100000$</p>
+                          <h5>Size:</h5>
+                          <p id="size"></p>
+                          <h5>Media:</h5>
+                          <p id="artMedia">oil and gold leaf on canvas</p>
+                          <h5>Ideas behind the work:</h5>
+                          <p id="idea"></p>
+                        </div>
+                      </div>
+                      <div
+                        class="tab-pane fade"
+                        id="pills-Owner"
+                        role="tabpanel"
+                        aria-labelledby="pills-Owner-tab"
+                      >
+                        <h5>Previous Owners:</h5>
+                        <div class="prev-owners-container">
+                          <div class="plan-info">
+                            <div class="plan-image">
+                              <img
+                                src="assets/images/man.png"
+                                alt="Plan Image"
+                              />
+                            </div>
+                            <div id="PrevOwner" class="plan-details">
+                              <h2 id="PrevOwnerName" class="plan-name">
+                                Anonymous
+                              </h2>
+                              <span id="PrevOwnerKey" class="plan-price"
+                                >Public Key:</span
+                              >
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div
-                      class="tab-pane fade"
-                      id="pills-Owner"
-                      role="tabpanel"
-                      aria-labelledby="pills-Owner-tab"
-                    >
-                      <h5>History</h5>
-                    </div>
+                    
                   </div>
-                  <div>
-                    <!-- <h5>Name:</h5>
-                  <p>For he's a jolly good fellow 2020</p> -->
-                  </div>
-
-                  <!--    <p style="overflow-y: scroll; height: 10vh;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cum deleniti unde accusantium corrupti, quia voluptas laudantium dolorum, dolor harum quasi sapiente voluptatem impedit labore error? Distinctio magni dignissimos unde veritatis in exercitationem error sint nostrum fuga consequuntur aperiam porro dicta, excepturi amet adipisci nam enim deleniti eaque possimus? Nulla ad adipisci obcaecati autem eaque similique optio aliquam tempore veritatis, ut ipsum ab repudiandae. Tenetur quod esse dolorum eligendi. Minus ad esse rerum repellendus corporis nam omnis, aliquid velit dolorum eveniet, facere magnam. Recusandae eaque quisquam eveniet cum magni veritatis sed ducimus ut, ad, officiis aliquam illo, molestiae similique impedit accusantium nisi optio. Alias mollitia tempore quis, quibusdam obcaecati vel eligendi voluptatibus sapiente, atque qui cum, iste quidem maiores unde neque cumque! Rerum quidem quis distinctio natus ab sed laborum dignissimos quae error consequuntur? Impedit reiciendis neque at numquam nihil totam pariatur eligendi, laborum, soluta non doloremque nulla dolores perferendis exercitationem, repellendus eveniet! Eius cumque eveniet vero nesciunt debitis assumenda id enim, animi ipsam officiis, facere magni ipsa? Dignissimos vitae fugiat dolor voluptatem dolorem sint vero laudantium quaerat pariatur saepe vel, maiores, sunt exercitationem eius nulla illum reprehenderit! Cupiditate voluptatibus fuga sequi, ad aperiam nemo ex eos facilis reiciendis nulla, provident rem labore consectetur dolores iusto. Alias cum molestiae iusto dolore adipisci, provident fugiat expedita molestias eligendi optio culpa nisi reprehenderit ea maxime ullam similique, rerum a nemo earum accusamus deserunt recusandae corporis laborum impedit! Praesentium, quas reprehenderit. Nemo, quos! Beatae totam molestias voluptate soluta dolores, officia aut recusandae ducimus similique maxime vitae, animi modi voluptas eaque iste quibusdam et deleniti! Nesciunt accusantium sit voluptatem deserunt quidem soluta. Inventore suscipit eum doloremque ad delectus laborum at, eius minus saepe cupiditate esse mollitia earum fugiat, atque, velit aliquid ullam quia vero rem laboriosam aspernatur! Expedita harum, suscipit non reprehenderit eos, maiores ducimus repellendus similique tenetur impedit placeat quisquam quia, laboriosam atque tempore porro sunt velit? Optio possimus harum enim vero ex sit architecto repellendus dignissimos nisi libero quaerat culpa voluptas omnis illo, quasi ea deserunt veniam exercitationem magnam! Aliquid delectus exercitationem repellendus nam, odio et dolor consequatur dolore placeat nostrum magnam, numquam dicta aperiam ad qui rem ratione impedit quo saepe quod modi distinctio corporis? Commodi, aut minus vero dicta similique excepturi molestias dignissimos in quasi itaque dolor optio quaerat pariatur sunt, eaque velit assumenda consequatur neque. Commodi neque magnam vel impedit earum nisi molestias quidem error omnis atque veniam sed provident deserunt facere adipisci eos repellat illo nihil eveniet nostrum voluptatibus dolorum, incidunt sint? Libero inventore cum ipsam voluptas laboriosam provident explicabo rerum in eligendi quisquam mollitia maxime voluptatem autem, rem asperiores atque consequatur sequi? Beatae illum harum pariatur eos commodi sequi perspiciatis modi obcaecati quam error unde incidunt quae cupiditate doloribus molestiae, quaerat at aliquid voluptatem dolore id deleniti iusto aspernatur! Numquam, explicabo. Hic, consectetur fugit non modi a, asperiores fuga illo cumque ex quasi perferendis necessitatibus. Facere animi qui veniam vel magni consequatur doloribus recusandae impedit quis dignissimos porro, suscipit ea deleniti consequuntur autem. Dolore officiis numquam veniam.</p>
-               -->
-                  <!-- add size section -->
-
+                  <img id="error" style="margin:90px; margin-top: 20px; width: 50%; display: none;" src="assets/images/error.png" alt="">
+                  
                   <p class="space-holder">holder</p>
                 </div>
               </div>
             </div>
-            <!-- <div id="frontSheet" class="data">
-              <div class="content">
-                <div class="front-sheet-head">
-                  <h2 class="authenticity">The item is authentic</h2>
-                  <img src="#" alt="checkmark" />
-                  <p>
-                    Boxing icon has the will for a couple more fightsBoxing icon
-                    has the will for a couple more fightsBoxing icon has the
-                    will for a couple more fightsBoxing icon has the will for a
-                    couple more fightsBoxing icon has the will for a couple more
-                    fightsBoxing icon has the will for a couple more
-                    fightsBoxing icon has the will for a couple more
-                    fightsBoxing icon has the will for a couple more
-                    fightsBoxing icon has the will for a couple more fights
-                  </p>
-                </div>
-
-                <h1 class="title">
-                  <a href="#"
-                    >Boxing icon has the will for a couple more fights
-                  </a>
-                </h1>
-                <p class="text"></p>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
@@ -342,7 +331,7 @@
         paysheet.style.height = "0px";
       });
       open_paybtn.addEventListener("click", () => {
-        paysheet.style.height = "70vh";
+        paysheet.style.height = "90vh";
       });
     </script>
 
@@ -352,9 +341,12 @@
 
       let card = document.getElementById("backSheet");
       let buybtn = document.getElementById("non-ownerBtn");
-
-      buybtn.style.top = "85vh";
-      buybtn.style.transition = "top 300ms";
+      let Obuybtn = document.getElementById("ownerBtn");
+      
+      
+      buybtn.style.bottom = "120px";
+      buybtn.style.transition = "bottom 300ms";
+      Obuybtn.style.transition = "bottom 300ms";
       card.style.height = "350px";
       card.style.transition = "height 300ms";
       var startingX, startingY, movingX, movingY;
@@ -375,11 +367,13 @@
           //console.log("down");
           expanded = false;
           card.style.height = "350px";
-          buybtn.style.top = "85vh";
+          buybtn.style.bottom = "120px";
+          Obuybtn.style.bottom = "120px";
         } else if (startingY - 100 > movingY && !expanded) {
           //console.log("up");
           card.style.height = "640px";
-          buybtn.style.top = "90vh";
+          buybtn.style.bottom = "40px";
+          Obuybtn.style.bottom = "40px";
           expanded = true;
         }
       }
@@ -393,107 +387,7 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <!--Script to verify signature-->
-    <!--  <script >
-      const currentURL = new URL(location.href);
-      //console.log(currentURL);
-      var ID = currentURL.searchParams.get("itemID");
-      console.log("item id in new script: " + ID);
-
-      
-      function verifySignature(signature, empName, hash) {
-        const crypto = require("crypto");
-        const fs = require("fs");
-        const buffer = require("buffer");
-
-        //generate a path for public key
-        const publicKeyPath = "pbft/" + empName + "-publickey.txt";
-        //read public key from file path
-        const publicKey = fs.readFileSync(publicKeyPath);
-        //convert signature string to buffer
-        const signatureBuffer = Buffer.from(signature);
-
-        const h = Buffer.from(hash); //hash value of transaction
-
-        //verify signature to see if its ok or not
-        const isVerified = crypto.verify(
-          "SHA256",
-          h,
-          publicKey,
-          signatureBuffer
-        );
-
-        return isVerified; //if not verified fix the UI
-      } //end of verify signature function
-
-
-      //---GET parameters for verifysignature from blockchain---------------------------
-
-      //fetch signature, employee name and hash from blockchain  using itemIF
-      var signature = "";
-      var empName = ""; 
-      var hash = "";
-
-      //first fetch data from blockchain     
-      
-      
-      await fetch("blockchain.json")
-      .then(function (response) {
-          return response.json();
-      }
-      )
-      .then(function (resp) {
-          //for each transaction in the block
-          for (var transactionNum = 0; transactionNum < resp[1]["data"].length; transactionNum ++) {
-              var data = resp[1]["data"][transactionNum]["input"]["data"]["data"];
-              //console.log(data["ID"]);
-
-              //if the itemID from URL is id from blockchain
-              if (data["ID"] == ID) {
-                signature = data["employee signature"];
-                empName = data["employee name"];
-                hash = resp[1]["data"][transactionNum]["hash"];
-              
-              }
-          }
-
-      })
-      .catch(error => {
-          console.log(error);
-      });
-
-      
-      //myfunction();
-
-      console.log(signature);
-      console.log(hash);
-      console.log(empName);
-      var isAuthentic = verifySignature(signature, empName, hash);
-      console.log(isAuthentic);
-
-      /*
-      function start() {
-        return myfunction();
-      }
-
-      // Call start
-      (async() => {
-        //console.log('before start');
-        await start();
-        
-        console.log(signature);
-        console.log(hash);
-        console.log(empName);
-        var isAuthentic = verifySignature(signature, empName, hash);
-        console.log(isAuthentic);
-      })();
-      */
-
-
-    </script> -->
-
     <script type="module" src="display-main-card.js"></script>
-    <!-- <script type="module" src="walletConnect.js"></script> -->
 
     <script type="module" src="URLgenerator.js"></script>
     <script src="./dist/bundle.js"></script>
